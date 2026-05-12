@@ -2,7 +2,7 @@
 title: Home
 ---
 
-# PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client
+# Team 13 PRDs
 
 Auto-generated catalog of PRDs in [ns-btan/team13-pm-prd](https://github.com/ns-btan/team13-pm-prd). Authored collaboratively by the Netskope PM team. PRDs are grouped by lifecycle status — active work stays expanded; older statuses are collapsed.
 
