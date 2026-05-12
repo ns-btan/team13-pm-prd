@@ -1,0 +1,975 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product Requirements catalog for ns-btan/team13-pm-prd">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Process & Metadata Schema - PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../_stylesheets/status-badges.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#process-metadata-schema" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client" class="md-header__button md-logo" aria-label="PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Process & Metadata Schema
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ns-btan/team13-pm-prd" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ns-btan/team13-pm-prd
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Process & Schema
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client" class="md-nav__button md-logo" aria-label="PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ns-btan/team13-pm-prd" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ns-btan/team13-pm-prd
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process & Schema
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process & Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata schema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-statuses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle statuses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-new-prd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a new PRD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promoting-a-prd-through-the-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promoting a PRD through the lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conventions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="process-metadata-schema">Process &amp; Metadata Schema<a class="headerlink" href="#process-metadata-schema" title="Permanent link">&para;</a></h1>
+<p>How the 4 PM owners add, maintain, and promote PRDs in this repo.</p>
+<h2 id="metadata-schema">Metadata schema<a class="headerlink" href="#metadata-schema" title="Permanent link">&para;</a></h2>
+<p>Every per-PRD <code>docs/nplan-XXXX/index.md</code> starts with YAML frontmatter:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nn">---</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">nplan</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7523</span><span class="w">                                   </span><span class="c1"># required — just the number</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Scope as Object</span><span class="w">                        </span><span class="c1"># required</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">active</span><span class="w">                                </span><span class="c1"># required — see lifecycle below</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">phase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Concept</span><span class="w">                                </span><span class="c1"># optional — Concept | Definition | Development | Rollout</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin Console / RBAC &amp; Identity</span><span class="w">       </span><span class="c1"># required</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4</span><span class="w">                                  </span><span class="c1"># required — document version (semver-ish)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jadrian</span><span class="w">                                </span><span class="c1"># required — PM GitHub handle</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-04-17</span><span class="w">                           </span><span class="c1"># required — YYYY-MM-DD, keep fresh</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nt">shipped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-06-15</span><span class="w">                           </span><span class="c1"># set ONLY when moving to ga status</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nn">---</span>
+</code></pre></div>
+<p>The home page scans all <code>docs/nplan-*/index.md</code> files and auto-groups them by <code>status</code>. <strong>Do not</strong> manually edit <code>docs/index.md</code> — it is generated.</p>
+<h2 id="lifecycle-statuses">Lifecycle statuses<a class="headerlink" href="#lifecycle-statuses" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>status</th>
+<th>Meaning</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active</code></td>
+<td>Currently being developed, PRD is the source of truth</td>
+<td>The default — set when you create a new PRD</td>
+</tr>
+<tr>
+<td><code>beta</code></td>
+<td>Feature shipped to limited customers, PRD still iterating</td>
+<td>When Limited Availability begins</td>
+</tr>
+<tr>
+<td><code>ga</code></td>
+<td>Generally available, PRD preserved for reference</td>
+<td>When the feature ships to all customers; also set <code>shipped: YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td><code>shelved</code></td>
+<td>Paused, may return</td>
+<td>When work is deprioritized</td>
+</tr>
+<tr>
+<td><code>archived</code></td>
+<td>Will not be built / superseded by another PRD</td>
+<td>When abandoning or consolidating</td>
+</tr>
+</tbody>
+</table>
+<h2 id="adding-a-new-prd">Adding a new PRD<a class="headerlink" href="#adding-a-new-prd" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Create the content folder at the repo root: <code>NPLAN-XXXX/</code>, containing the PRD MD, any linked MD, <code>assets/</code>, <code>mockup/</code>.</li>
+<li>Create the Pages directory: <code>pages-preview/docs/nplan-xxxx/</code> (lowercase).</li>
+<li>Inside it, create four symlinks:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ln -s ../../../NPLAN-XXXX/NPLAN-XXXX-&lt;Name&gt;-PRD.md prd.md
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ln -s ../../../NPLAN-XXXX/NPLAN-XXXX-&lt;Name&gt;-Design-Spec.md ui-spec.md
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>ln -s ../../../NPLAN-XXXX/assets assets
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>ln -s ../../../NPLAN-XXXX/mockup mockup
+</code></pre></div></li>
+<li>Create <code>index.md</code> with the frontmatter above and a brief overview.</li>
+<li>Add the section to <code>mkdocs.yml</code> nav.</li>
+<li>Commit to a feature branch, open a PR.</li>
+<li>Once merged, rebuild and push to <code>gh-pages</code> (see deployment below).</li>
+</ol>
+<h2 id="promoting-a-prd-through-the-lifecycle">Promoting a PRD through the lifecycle<a class="headerlink" href="#promoting-a-prd-through-the-lifecycle" title="Permanent link">&para;</a></h2>
+<p>Single-file change in the PRD's <code>index.md</code> frontmatter:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gd">- status: active</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="gi">+ status: ga</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="gi">+ shipped: 2026-06-15</span>
+</code></pre></div>
+<p>Commit, rebuild, push <code>gh-pages</code>. The home page automatically moves the entry from <strong>Active</strong> to <strong>Shipped</strong>. URL stays the same, so all existing links still work.</p>
+<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<p>Until automated via GitHub Actions, the manual deploy is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>pages-preview
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>.venv/bin/mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>git<span class="w"> </span>worktree<span class="w"> </span>add<span class="w"> </span>/tmp/gh-pages<span class="w"> </span>gh-pages
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">cd</span><span class="w"> </span>/tmp/gh-pages
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>find<span class="w"> </span>.<span class="w"> </span>-mindepth<span class="w"> </span><span class="m">1</span><span class="w"> </span>-maxdepth<span class="w"> </span><span class="m">1</span><span class="w"> </span>!<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;.git&#39;</span><span class="w"> </span>!<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;.nojekyll&#39;</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="o">{}</span><span class="w"> </span>+
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>cp<span class="w"> </span>-R<span class="w"> </span>/path/to/pages-preview/site/.<span class="w"> </span>.
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>git<span class="w"> </span>add<span class="w"> </span>-A<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Rebuild site&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>gh-pages
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">cd</span><span class="w"> </span>-<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>worktree<span class="w"> </span>remove<span class="w"> </span>/tmp/gh-pages<span class="w"> </span>--force
+</code></pre></div>
+<h2 id="conventions">Conventions<a class="headerlink" href="#conventions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>NPLAN numbers are always 4 digits (<code>7523</code>, not <code>07523</code>).</li>
+<li>PRD URLs are stable forever — once a PRD is published at <code>/nplan-7523/</code>, do not rename its folder even across lifecycle changes.</li>
+<li>Keep <code>updated:</code> fresh on every non-trivial edit — it's shown in the catalog.</li>
+<li>Owner is the single DRI. Co-authors are named inside the PRD content.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+<button id="giscus-toggle"
+        type="button"
+        aria-label="Toggle discussion panel"
+        aria-expanded="false"
+        aria-controls="giscus-panel"
+        title="Open discussion for this section">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+  </svg>
+  <span>Discuss</span>
+</button>
+
+<aside id="giscus-panel" aria-hidden="true" aria-label="Section discussion">
+  <header class="giscus-panel__header">
+    <div class="giscus-panel__titlebar">
+      <strong>Discussion</strong>
+      <button id="giscus-close" type="button" aria-label="Close discussion panel">✕</button>
+    </div>
+    <div class="giscus-panel__sectionbar">
+      <label for="giscus-section-picker">Section:</label>
+      <select id="giscus-section-picker" aria-label="Select section to discuss"></select>
+    </div>
+  </header>
+  <div class="giscus-panel__body" id="giscus-container"></div>
+</aside>
+
+<style>
+  :root {
+    --giscus-panel-width: 460px;
+    --giscus-panel-z: 1000;
+    --gh-bg: #ffffff;
+    --gh-bg-subtle: #f6f8fa;
+    --gh-border: #d0d7de;
+    --gh-fg: #1f2328;
+    --gh-fg-muted: #59636e;
+    --gh-accent: #0969da;
+    --gh-accent-fg: #ffffff;
+  }
+  [data-md-color-scheme="slate"] {
+    --gh-bg: #0d1117;
+    --gh-bg-subtle: #161b22;
+    --gh-border: #30363d;
+    --gh-fg: #e6edf3;
+    --gh-fg-muted: #8b949e;
+    --gh-accent: #2f81f7;
+    --gh-accent-fg: #ffffff;
+  }
+  #giscus-toggle {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: var(--giscus-panel-z);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--gh-accent);
+    color: var(--gh-accent-fg);
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    font: 500 14px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  }
+  #giscus-toggle:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  }
+  #giscus-toggle:focus-visible {
+    outline: 2px solid var(--gh-accent);
+    outline-offset: 2px;
+  }
+
+  #giscus-panel {
+    position: fixed;
+    top: 0;
+    right: calc(-1 * var(--giscus-panel-width) - 20px);
+    width: var(--giscus-panel-width);
+    max-width: 100vw;
+    height: 100vh;
+    z-index: var(--giscus-panel-z);
+    background: var(--gh-bg);
+    color: var(--gh-fg);
+    color-scheme: light;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+    visibility: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  [data-md-color-scheme="slate"] #giscus-panel {
+    color-scheme: dark;
+  }
+  #giscus-panel.open {
+    right: 0;
+    visibility: visible;
+  }
+  .giscus-panel__header {
+    flex: 0 0 auto;
+    border-bottom: 1px solid var(--gh-border);
+    background: var(--gh-bg-subtle);
+  }
+  .giscus-panel__titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px 8px;
+    font-size: 15px;
+  }
+  .giscus-panel__titlebar strong {
+    color: var(--gh-fg);
+    font-weight: 600;
+  }
+  .giscus-panel__sectionbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 18px 14px;
+    font-size: 13px;
+    color: var(--gh-fg-muted);
+  }
+  .giscus-panel__sectionbar label {
+    flex: 0 0 auto;
+  }
+  #giscus-section-picker {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 6px 10px;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    background: var(--gh-bg);
+    color: var(--gh-fg);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16' fill='%238b949e'%3E%3Cpath d='M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 28px;
+  }
+  #giscus-section-picker:hover {
+    border-color: var(--gh-fg-muted);
+  }
+  #giscus-section-picker:focus-visible {
+    outline: 2px solid var(--gh-accent);
+    outline-offset: 0;
+    border-color: var(--gh-accent);
+  }
+  #giscus-section-picker option {
+    background: var(--gh-bg);
+    color: var(--gh-fg);
+  }
+  #giscus-close {
+    background: transparent;
+    border: 0;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--gh-fg-muted);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  #giscus-close:hover {
+    background: var(--gh-border);
+    color: var(--gh-fg);
+  }
+  .giscus-panel__body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 16px 18px;
+    background: var(--gh-bg);
+  }
+
+  @media (max-width: 600px) {
+    :root { --giscus-panel-width: 100vw; }
+    #giscus-toggle span { display: none; }
+    #giscus-toggle { padding: 12px; }
+  }
+</style>
+
+<script>
+  (function () {
+    var toggleBtn = document.getElementById('giscus-toggle');
+    var panel = document.getElementById('giscus-panel');
+    var closeBtn = document.getElementById('giscus-close');
+    var picker = document.getElementById('giscus-section-picker');
+    var container = document.getElementById('giscus-container');
+    if (!toggleBtn || !panel || !closeBtn || !picker || !container) return;
+
+    var PAGE_PATH = window.location.pathname;
+    var PAGE_KEY = PAGE_PATH.replace(/\/$/, '') || '/';
+
+    var main = document.querySelector('article') || document.querySelector('main') || document.body;
+    var headings = Array.prototype.slice.call(main.querySelectorAll('h2[id], h3[id]'));
+    var sections = headings.map(function (h) {
+      return {
+        id: h.id,
+        level: parseInt(h.tagName.substring(1), 10),
+        title: h.textContent.replace(/¶|#/g, '').trim(),
+        element: h,
+        term: PAGE_KEY + '#' + h.id
+      };
+    });
+
+    var pageTerm = PAGE_KEY;
+    var pageOption = { id: '', title: '— Whole page —', term: pageTerm, level: 0 };
+
+    function makeOpt(s) {
+      var opt = document.createElement('option');
+      opt.value = s.term;
+      opt.textContent = (s.level === 3 ? '    ' : '') + s.title;
+      opt.dataset.id = s.id;
+      return opt;
+    }
+    picker.appendChild(makeOpt(pageOption));
+    sections.forEach(function (s) { picker.appendChild(makeOpt(s)); });
+
+    var currentTerm = pageTerm;
+    if (sections.length > 0 && 'IntersectionObserver' in window) {
+      var visibleIds = new Set();
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) visibleIds.add(e.target.id);
+          else visibleIds.delete(e.target.id);
+        });
+        for (var i = sections.length - 1; i >= 0; i--) {
+          if (visibleIds.has(sections[i].id)) {
+            currentTerm = sections[i].term;
+            return;
+          }
+        }
+      }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+      sections.forEach(function (s) { io.observe(s.element); });
+    }
+
+    if (window.location.hash) {
+      var hashId = window.location.hash.substring(1);
+      var match = sections.find(function (s) { return s.id === hashId; });
+      if (match) currentTerm = match.term;
+    }
+
+    function giscusTheme() {
+      var scheme = document.documentElement.getAttribute('data-md-color-scheme');
+      return scheme === 'slate' ? 'dark' : 'light';
+    }
+
+    var giscusLoaded = false;
+    function loadGiscus(term) {
+      picker.value = term;
+      container.innerHTML = '';
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      var attrs = {
+        'data-repo': 'ns-btan/team13-pm-prd',
+        'data-repo-id': 'R_kgDOSbzwRA',
+        'data-category': 'General',
+        'data-category-id': 'DIC_kwDOSbzwRM4C86GP',
+        'data-mapping': 'specific',
+        'data-term': term,
+        'data-strict': '0',
+        'data-reactions-enabled': '1',
+        'data-emit-metadata': '0',
+        'data-input-position': 'bottom',
+        'data-theme': giscusTheme(),
+        'data-lang': 'en',
+        'data-loading': 'lazy',
+        'crossorigin': 'anonymous'
+      };
+      Object.keys(attrs).forEach(function (k) { script.setAttribute(k, attrs[k]); });
+      script.async = true;
+      container.appendChild(script);
+      giscusLoaded = true;
+    }
+
+    function switchTerm(term) {
+      var frame = document.querySelector('iframe.giscus-frame');
+      if (frame && frame.contentWindow) {
+        frame.contentWindow.postMessage({
+          giscus: { setConfig: { term: term } }
+        }, 'https://giscus.app');
+        picker.value = term;
+      } else {
+        loadGiscus(term);
+      }
+    }
+
+    function openPanel() {
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      if (!giscusLoaded) loadGiscus(currentTerm);
+      else if (picker.value !== currentTerm) switchTerm(currentTerm);
+    }
+    function closePanel() {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    toggleBtn.addEventListener('click', function () {
+      panel.classList.contains('open') ? closePanel() : openPanel();
+    });
+    closeBtn.addEventListener('click', closePanel);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
+    });
+    picker.addEventListener('change', function () { switchTerm(picker.value); });
+
+    var mo = new MutationObserver(function () {
+      if (!giscusLoaded) return;
+      var frame = document.querySelector('iframe.giscus-frame');
+      if (frame && frame.contentWindow) {
+        frame.contentWindow.postMessage({
+          giscus: { setConfig: { theme: giscusTheme() } }
+        }, 'https://giscus.app');
+      }
+    });
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-md-color-scheme'] });
+  })();
+</script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "content.code.copy", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
