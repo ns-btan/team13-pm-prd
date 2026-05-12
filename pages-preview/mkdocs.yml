@@ -31,12 +31,9 @@ theme:
 
 nav:
   - Home: index.md
-  # Add per-PRD sections here as you publish them. Example:
-  # - NPLAN-XXXX <Title>:
-  #   - Overview: nplan-xxxx/index.md
-  #   - PRD: nplan-xxxx/prd.md
-  #   - UI Design Spec: nplan-xxxx/ui-spec.md
-  #   - Interactive Mockup: nplan-xxxx/mockup/index.html
+  - NPLAN-7304 Event Streaming Client — Artifactory Support:
+    - Overview: nplan-7304/index.md
+    - PRD: nplan-7304/prd.md
   - Process & Schema: process.md
 
 markdown_extensions:
