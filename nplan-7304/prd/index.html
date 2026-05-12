@@ -1,0 +1,3370 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Product Requirements catalog for ns-btan/team13-pm-prd">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../process/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PRD - PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../_stylesheets/status-badges.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#event-streaming-client-artifactory-support-product-requirements-document" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client" class="md-header__button md-logo" aria-label="PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PRD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ns-btan/team13-pm-prd" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ns-btan/team13-pm-prd
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  NPLAN-7304 Event Streaming Client — Artifactory Support
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../process/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Process & Schema
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client" class="md-nav__button md-logo" aria-label="PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ns-btan/team13-pm-prd" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ns-btan/team13-pm-prd
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NPLAN-7304 Event Streaming Client — Artifactory Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NPLAN-7304 Event Streaming Client — Artifactory Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overview [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Overview [NPI Phase: Concept]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 System Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-key-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Key Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-market-landscape-strategic-relevance-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Market Landscape &amp; Strategic Relevance [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Market Landscape &amp; Strategic Relevance [NPI Phase: Concept]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Market
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-relevance-to-netskope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Relevance to Netskope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-customer-voice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Customer Voice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-definitions-glossary-naming-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Definitions, Glossary &amp; Naming [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Definitions, Glossary &amp; Naming [NPI Phase: Concept]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-glossary-of-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Glossary of Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Naming Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-personas-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Personas [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-assumptions-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Assumptions [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-detailed-use-cases-user-journeys-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Detailed Use Cases &amp; User Journeys [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Detailed Use Cases &amp; User Journeys [NPI Phase: Concept]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-user-journeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 User Journeys
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 User Journeys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#journey-1-initial-deployment-via-artifactory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Journey 1: Initial Deployment via Artifactory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-2-configure-artifactory-source-during-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Journey 2: Configure Artifactory Source During Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-3-upgrade-via-artifactory-automatic-or-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Journey 3: Upgrade via Artifactory (Automatic or Manual)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-4-view-and-edit-current-image-source-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Journey 4: View and Edit Current Image Source Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-detailed-use-cases-prioritized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Detailed Use Cases (Prioritized)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-use-case-priority-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Use Case Priority Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-product-behavior-corner-cases-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Product Behavior &amp; Corner Cases [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Product Behavior &amp; Corner Cases [NPI Phase: Concept]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-expected-product-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Expected Product Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-happy-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Happy Paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-sad-paths-error-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Sad Paths &amp; Error States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-faq-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 FAQ &amp; Design Decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-detailed-product-specifications-npi-phase-conceptdesign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Detailed Product Specifications [NPI Phase: Concept/Design]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Detailed Product Specifications [NPI Phase: Concept/Design]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-registry-source-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Registry Source Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-registry-configuration-artifactory-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Registry Configuration (Artifactory Mode)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-upgrade-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Upgrade Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-configuration-view-and-edit-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Configuration View and Edit Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-tls-certificate-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6 TLS / Certificate Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#87-platform-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.7 Platform Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#88-alternative-registry-landscape-p2-scope-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.8 Alternative Registry Landscape (P2 Scope Input)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-ui-screens-workflows-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. UI Screens &amp; Workflows [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. UI Screens &amp; Workflows [NPI Phase: Concept]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#90-admin-console-ui-current-state-and-p2-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.0 Admin Console UI — Current State and P2 Target
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#91-installer-image-source-setup-during-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Installer: Image Source Setup During Install
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-config-view-image-source-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Config View: Image Source Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-config-edit-update-image-source-post-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Config Edit: Update Image Source Post-Install
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-componentfeature-catalog-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Component/Feature Catalog [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-business-rules-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Business Rules [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-analytics-reporting-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Analytics &amp; Reporting [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-architecture-dependencies-constraints-npi-phase-designimplement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Architecture, Dependencies &amp; Constraints [NPI Phase: Design/Implement]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Architecture, Dependencies &amp; Constraints [NPI Phase: Design/Implement]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-architecture-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Architecture Layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-accessory-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Accessory Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-constraints-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 Constraints &amp; Guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-gtm-npi-phase-implement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. GTM [NPI Phase: Implement]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. GTM [NPI Phase: Implement]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-pricing-packaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 Pricing &amp; Packaging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-support-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 Support Readiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-cogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 COGS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-rollout-usage-projections-npi-phase-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Rollout &amp; Usage Projections [NPI Phase: Design]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-adoption-metrics-npi-phase-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Adoption Metrics [NPI Phase: Design]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-open-items-decisions-needed-npi-phase-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Open Items &amp; Decisions Needed [NPI Phase: Concept]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-document-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Document History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-appendices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Appendices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. Appendices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appendix-a-demo-reference-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A: Demo / Reference Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendix-b-related-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B: Related Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process & Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="event-streaming-client-artifactory-support-product-requirements-document">Event Streaming Client — Artifactory Support — Product Requirements Document<a class="headerlink" href="#event-streaming-client-artifactory-support-product-requirements-document" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Document Version</strong></td>
+<td>1.8</td>
+</tr>
+<tr>
+<td><strong>Last Updated</strong></td>
+<td>2026-05-12</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Draft (Business PRD, Concept phase)</td>
+</tr>
+<tr>
+<td><strong>NPLAN</strong></td>
+<td>NPLAN-7304</td>
+</tr>
+<tr>
+<td><strong>Domain</strong></td>
+<td>Event Streaming Client / Deployment</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-overview-npi-phase-concept">1. Overview [NPI Phase: Concept]<a class="headerlink" href="#1-overview-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<h3 id="11-problem-statement">1.1 Problem Statement<a class="headerlink" href="#11-problem-statement" title="Permanent link">&para;</a></h3>
+<p>Security-focused customers require that all Docker images be scanned for vulnerabilities before deployment. These customers operate environments where direct internet access is not permitted, and Artifactory serves as the only approved Docker image repository. Currently, Event Streaming Client does not support Artifactory as an image source, blocking these customers from deploying or upgrading the product within their security policies.</p>
+<p>This affects two key actors:
+- <strong>Customer Admin:</strong> Cannot deploy or maintain Event Streaming Client without violating corporate policy.
+- <strong>Security Team:</strong> Cannot approve deployments that pull images directly from public registries or unapproved sources.</p>
+<h3 id="12-system-overview">1.2 System Overview<a class="headerlink" href="#12-system-overview" title="Permanent link">&para;</a></h3>
+<p>This feature enables Event Streaming Client to be installed and upgraded by pulling Docker images through a customer-managed Artifactory repository, rather than directly from Docker Hub.</p>
+<ul>
+<li>Customers configure Artifactory as the Docker image source during installer setup.</li>
+<li><strong>Two Docker images</strong> must be mirrored into Artifactory: <code>netskope/nsstreamingclient:stable</code> (the main streaming container) and <code>netskope/nswatcher:stable</code> (the watcher container that performs automatic weekly upgrades).</li>
+<li>Install and upgrade workflows pull both images from Artifactory instead of <code>hub.docker.com</code>.</li>
+<li>Images served from Artifactory may be pre-scanned for vulnerabilities per customer policy.</li>
+<li>The installer Python script (<code>netskope_event_streamingclient_installer.py</code>) is not downloaded via Artifactory — only Docker image pulls are in scope.</li>
+<li>Kubernetes and Helm deployment models are out of scope for this iteration.</li>
+</ul>
+<h3 id="13-key-design-principles">1.3 Key Design Principles<a class="headerlink" href="#13-key-design-principles" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Policy compliance by default:</strong> The feature must work within air-gapped and restricted-network environments where no direct internet access to public registries is available.</li>
+<li><strong>No workflow divergence:</strong> Artifactory-based installs and upgrades must follow the same operational steps as standard installs — no parallel or bespoke procedure.</li>
+<li><strong>Customer-controlled image lifecycle:</strong> Netskope does not manage the customer's Artifactory instance; customers are responsible for mirroring, scanning, and promoting images.</li>
+<li><strong>Minimal configuration surface:</strong> The only required change from the customer side should be specifying the Artifactory registry URL; all other behavior should be unchanged.</li>
+<li><strong>Image authenticity (P2):</strong> Because Artifactory is customer-managed, it introduces a risk that a non-Netskope or tampered image could be deployed. Netskope should provide a mechanism for the installer to verify that pulled images were genuinely issued by Netskope (e.g., image signature verification). This is not required for initial delivery but must be investigated and scoped by Engineering.</li>
+</ol>
+<hr />
+<h2 id="2-market-landscape-strategic-relevance-npi-phase-concept">2. Market Landscape &amp; Strategic Relevance [NPI Phase: Concept]<a class="headerlink" href="#2-market-landscape-strategic-relevance-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<h3 id="21-market">2.1 Market<a class="headerlink" href="#21-market" title="Permanent link">&para;</a></h3>
+<p>Enterprise security requirements increasingly mandate that all software artifacts pass through an internal repository with vulnerability scanning before deployment. Tools like JFrog Artifactory are widely adopted as the enforcement point for this policy. Customers in regulated industries (financial services, healthcare, government) frequently prohibit direct pulls from Docker Hub or other public registries entirely.</p>
+<p>This is not a single-customer ask — it is a common procurement blocker for security-sensitive accounts.</p>
+<h3 id="22-relevance-to-netskope">2.2 Relevance to Netskope<a class="headerlink" href="#22-relevance-to-netskope" title="Permanent link">&para;</a></h3>
+<p>Supporting Artifactory removes a deployment blocker for security-conscious enterprise customers. Without this capability, Event Streaming Client cannot be adopted in environments with strict registry policies, limiting Netskope's ability to close or expand in regulated verticals. This is a table-stakes integration for enterprise deployments.</p>
+<p><strong>Competitive landscape — event streaming and log forwarding:</strong></p>
+<p>Research into competing SASE/SSE vendors reveals that <strong>no direct competitor offers a containerized log-forwarding client equivalent to Event Streaming Client</strong>. This is a structural differentiator, not just a feature gap:</p>
+<table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>Product</th>
+<th>Deployment model</th>
+<th>Custom registry support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zscaler</td>
+<td>Nanolog Streaming Service (NSS)</td>
+<td>VM appliance (vSphere, AWS, Azure, GCP)</td>
+<td>N/A — not container-based</td>
+</tr>
+<tr>
+<td>Palo Alto Networks</td>
+<td>Strata Logging Service / Cortex Data Lake</td>
+<td>Cloud-hosted service</td>
+<td>N/A — no customer-deployed container</td>
+</tr>
+<tr>
+<td>Skyhigh Security</td>
+<td>Cloud Connector</td>
+<td>Appliance-based</td>
+<td>N/A — not container-based</td>
+</tr>
+<tr>
+<td>Broadcom / Symantec</td>
+<td>No dedicated component</td>
+<td>Cloud/sidecar (limited)</td>
+<td>Not documented</td>
+</tr>
+<tr>
+<td>Cisco Umbrella</td>
+<td>No syslog forwarder</td>
+<td>S3-based export only</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Akamai (ETP)</td>
+<td>Unified Log Streamer</td>
+<td>Cloud-hosted</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Netskope</strong></td>
+<td><strong>Event Streaming Client</strong></td>
+<td><strong>Container (Docker/Podman) on customer infrastructure</strong></td>
+<td><strong>Gap: Docker Hub only today — this feature closes it</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key finding:</strong> Zscaler NSS and PANW Strata are the closest functional equivalents for SIEM log forwarding, but both are VM appliances or cloud services — not containerized components deployed on customer infrastructure. Neither requires or offers registry configuration because they do not pull Docker images. Netskope's containerized model is architecturally distinct and gives customers more deployment flexibility, but it also means Netskope alone faces the Docker registry compliance requirement that this PRD addresses.</p>
+<p>Closing the Artifactory gap strengthens Netskope's position in air-gapped and regulated-industry accounts where competitors currently cannot deploy a comparable streaming client at all.</p>
+<h3 id="23-customer-voice">2.3 Customer Voice<a class="headerlink" href="#23-customer-voice" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Customer</th>
+<th>Ask</th>
+<th>Workaround Today</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIX Group</td>
+<td>Deploy Event Streaming Client via Artifactory to comply with internal vulnerability scanning policy; no direct internet registry access permitted</td>
+<td>None — feature is not currently supported</td>
+<td>Blocked / not supported</td>
+</tr>
+<tr>
+<td>US Cellular Corporation</td>
+<td>Deploy Event Streaming Client via Artifactory; same registry compliance requirement as SIX Group</td>
+<td>None — feature is not currently supported</td>
+<td>Blocked / not supported</td>
+</tr>
+</tbody>
+</table>
+<p>Both customers have no interim workaround and cannot deploy Event Streaming Client under their current security policies without this capability. Two independent enterprise customers with the same blocker confirms this is a segment-level requirement, not an isolated ask.</p>
+<hr />
+<h2 id="3-definitions-glossary-naming-npi-phase-concept">3. Definitions, Glossary &amp; Naming [NPI Phase: Concept]<a class="headerlink" href="#3-definitions-glossary-naming-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<h3 id="31-glossary-of-terms">3.1 Glossary of Terms<a class="headerlink" href="#31-glossary-of-terms" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event Streaming Client</td>
+<td>Netskope's client component that streams transaction events to a customer's SIEM or other event consumer. Deployed as a Docker/Podman container managed by the Python installer script.</td>
+</tr>
+<tr>
+<td>Installer</td>
+<td>The Python script <code>netskope_event_streamingclient_installer.py</code>, used to install, reinstall, uninstall, and update the Event Streaming Client container. Versioned with the <code>I.</code> prefix (e.g., <code>I.2025.11.1</code>).</td>
+</tr>
+<tr>
+<td>Streaming container</td>
+<td>The main Docker image <code>netskope/nsstreamingclient:stable</code> that performs event streaming to the SIEM.</td>
+</tr>
+<tr>
+<td>Watcher container</td>
+<td>The Docker image <code>netskope/nswatcher:stable</code> that monitors the main container and performs automatic weekly upgrades. Must also be pulled from Artifactory when Artifactory mode is configured.</td>
+</tr>
+<tr>
+<td>Artifactory</td>
+<td>JFrog's artifact repository manager, used by enterprises as a proxy and cache for Docker images, with built-in vulnerability scanning.</td>
+</tr>
+<tr>
+<td>Docker Hub</td>
+<td>The default public registry at <code>hub.docker.com</code> from which Netskope images are currently pulled. Requires direct internet access — the key blocker for air-gapped customers.</td>
+</tr>
+<tr>
+<td>Docker Image</td>
+<td>A packaged, executable container image. Event Streaming Client uses two: the streaming container and the watcher container.</td>
+</tr>
+<tr>
+<td>Air-gapped environment</td>
+<td>A network environment with no direct outbound internet access; all external content must be brought in through approved proxies or repositories.</td>
+</tr>
+<tr>
+<td>Image registry</td>
+<td>A service that stores and distributes Docker images. Can be public (Docker Hub) or private (Artifactory, ECR, etc.).</td>
+</tr>
+<tr>
+<td>Vulnerability scan</td>
+<td>An automated inspection of a container image for known CVEs and security issues, typically enforced by corporate policy before deployment.</td>
+</tr>
+<tr>
+<td>Podman</td>
+<td>The default rootless container runtime on Red Hat Enterprise Linux. The Event Streaming Client installer detects and supports Podman as an alternative to Docker.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-naming-conventions">3.2 Naming Conventions<a class="headerlink" href="#32-naming-conventions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Use This</th>
+<th>Not This</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Artifactory</td>
+<td>JFrog</td>
+<td>Customers refer to it as "Artifactory"; "JFrog" is the company name</td>
+</tr>
+<tr>
+<td>Event Streaming Client</td>
+<td>ESC (in customer-facing docs)</td>
+<td>Avoid ambiguous acronyms in external-facing content</td>
+</tr>
+<tr>
+<td>Docker image registry</td>
+<td>Container registry (unless broadening scope)</td>
+<td>Scope is Docker-specific for this iteration</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-personas-npi-phase-concept">4. Personas [NPI Phase: Concept]<a class="headerlink" href="#4-personas-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Role</th>
+<th>Interaction with Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Customer Admin</td>
+<td>Customer administrator configuring the Netskope platform via the Cloud Management Console. Responsible for deploying and maintaining Netskope components on the customer's infrastructure.</td>
+<td>Configures Artifactory as the Docker image source during installer setup; runs install and upgrade commands; monitors ESC health via Management Console alerts (P2).</td>
+</tr>
+<tr>
+<td>End User</td>
+<td>Customer end user protected by the Netskope platform.</td>
+<td>No direct interaction with this feature. Indirectly benefits from uninterrupted log streaming (maintained by the Customer Admin) that enables accurate policy enforcement and threat detection.</td>
+</tr>
+<tr>
+<td>Security / Platform Team</td>
+<td>Internal customer team that governs software supply chain policy.</td>
+<td>Mirrors and vulnerability-scans Netskope images in Artifactory before the Customer Admin can deploy. Enforces the corporate policy that blocks direct Docker Hub pulls.</td>
+</tr>
+<tr>
+<td>Netskope Support / PS</td>
+<td>Assists customers with deployment and troubleshooting.</td>
+<td>Must understand Artifactory-based deployment paths and the retry behavior to guide customers through connectivity failures and upgrade issues.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-assumptions-npi-phase-concept">5. Assumptions [NPI Phase: Concept]<a class="headerlink" href="#5-assumptions-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Assumption</th>
+<th>Impact if Wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>The customer has already mirrored <strong>both</strong> Netskope Docker images (<code>netskope/nsstreamingclient:stable</code> and <code>netskope/nswatcher:stable</code>) into their Artifactory instance before install/upgrade.</td>
+<td>If only one image is mirrored, install may succeed but auto-upgrade will fail when the watcher tries to pull its image.</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Artifactory is reachable from the host where Event Streaming Client is being installed (the same host that currently needs access to <code>hub.docker.com</code>).</td>
+<td>If not, a network path/proxy solution is outside this scope.</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>The customer's Artifactory instance supports Docker registry protocol (v2).</td>
+<td>If a non-standard version is used, additional compatibility work may be needed.</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>Authentication to Artifactory (credentials, tokens) is managed and provided by the customer.</td>
+<td>If Netskope needs to provision or rotate credentials, scope expands significantly.</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>Kubernetes and Helm are not deployment targets for this feature iteration.</td>
+<td>If customers require K8s/Helm support, a separate feature track is needed.</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>The installer Python script itself is downloaded from the Netskope API (<code>/api/v2/streamingclient/installer</code>) — this flow is unchanged; only Docker image pulls are in scope.</td>
+<td>If installer binaries also need to transit Artifactory, scope expands.</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>On RHEL hosts using Podman (rootless), the Artifactory registry configuration mechanism differs from Docker. Engineering must handle both container runtimes.</td>
+<td>If only Docker is supported, RHEL/Podman users cannot use this feature — defeating the RHEL-first priority.</td>
+</tr>
+<tr>
+<td>A8</td>
+<td>The <code>stable</code> image tag is used for both images. Artifactory-mirrored images must preserve this tag.</td>
+<td>If customers mirror with different tags, the installer's image reference logic must be updated.</td>
+</tr>
+<tr>
+<td>A9</td>
+<td>The customer's Artifactory instance is accessible over HTTPS (TLS). Docker and Podman both enforce HTTPS for any registry using credentials.</td>
+<td>If a customer's Artifactory is HTTP-only, TLS would need to be added on their side; insecure-registry workarounds must not be used (see §8.6).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-detailed-use-cases-user-journeys-npi-phase-concept">6. Detailed Use Cases &amp; User Journeys [NPI Phase: Concept]<a class="headerlink" href="#6-detailed-use-cases-user-journeys-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<h3 id="61-user-journeys">6.1 User Journeys<a class="headerlink" href="#61-user-journeys" title="Permanent link">&para;</a></h3>
+<h4 id="journey-1-initial-deployment-via-artifactory">Journey 1: Initial Deployment via Artifactory<a class="headerlink" href="#journey-1-initial-deployment-via-artifactory" title="Permanent link">&para;</a></h4>
+<p><strong>Persona:</strong> Customer Admin
+<strong>Goal:</strong> Deploy Event Streaming Client in an environment where only Artifactory is an approved Docker registry.
+<strong>Entry Point:</strong> Event Streaming Client installation documentation / installer CLI.</p>
+<p><strong>Flow:</strong>
+1. Security team mirrors the Event Streaming Client Docker image from Netskope's registry into the customer's Artifactory instance and scans it for vulnerabilities.
+2. Security team approves the image and promotes it to the release repository in Artifactory.
+3. Customer Admin receives the Artifactory registry URL and image path from the security team.
+4. Customer Admin runs the Event Streaming Client install command, specifying the Artifactory registry URL as the image source.
+5. Installer pulls the Docker image from Artifactory instead of the public registry.
+6. Event Streaming Client starts successfully and begins streaming events.</p>
+<h4 id="journey-2-configure-artifactory-source-during-installation">Journey 2: Configure Artifactory Source During Installation<a class="headerlink" href="#journey-2-configure-artifactory-source-during-installation" title="Permanent link">&para;</a></h4>
+<p><strong>Persona:</strong> Customer Admin
+<strong>Goal:</strong> Set up Artifactory as the image source during initial install, including authentication credentials.
+<strong>Entry Point:</strong> Event Streaming Client installer CLI.</p>
+<p><strong>Flow:</strong>
+1. Admin launches the installer.
+2. Installer prompts: choose image source — Docker Hub (default) or custom Artifactory repository.
+3. Admin selects Artifactory and provides the registry URL.
+4. Installer prompts for authentication credentials (username + token/password).
+5. Installer validates connectivity and authentication against the registry.
+6. Installer pulls the image from Artifactory and completes the installation.
+7. Configuration (URL, auth, mode) is persisted for future upgrades.</p>
+<h4 id="journey-3-upgrade-via-artifactory-automatic-or-manual">Journey 3: Upgrade via Artifactory (Automatic or Manual)<a class="headerlink" href="#journey-3-upgrade-via-artifactory-automatic-or-manual" title="Permanent link">&para;</a></h4>
+<p><strong>Persona:</strong> Customer Admin
+<strong>Goal:</strong> Upgrade Event Streaming Client to a new version without breaking the Artifactory-only policy, via either automatic or manual upgrade.
+<strong>Entry Point:</strong> Event Streaming Client upgrade command or auto-upgrade trigger.</p>
+<p><strong>Flow:</strong>
+1. Netskope releases a new version of the Event Streaming Client Docker image.
+2. Security team mirrors the new image into Artifactory, scans it, and promotes it.
+3. Upgrade is triggered (manually by admin, or automatically by the client).
+4. Installer reads the persisted Artifactory configuration and credentials.
+5. Installer pulls the new image version from Artifactory.
+6. Event Streaming Client upgrades and restarts with the new version.</p>
+<h4 id="journey-4-view-and-edit-current-image-source-configuration">Journey 4: View and Edit Current Image Source Configuration<a class="headerlink" href="#journey-4-view-and-edit-current-image-source-configuration" title="Permanent link">&para;</a></h4>
+<p><strong>Persona:</strong> Customer Admin
+<strong>Goal:</strong> Inspect the current image source mode and configuration, and update it if needed.
+<strong>Entry Point:</strong> Event Streaming Client CLI management command.</p>
+<p><strong>Flow:</strong>
+1. Admin runs the source inspection command (e.g., <code>esc config show</code>).
+2. CLI displays: current mode (Docker Hub or Artifactory), registry URL, and authentication username. Secret credentials are masked.
+3. Admin optionally runs the edit command (e.g., <code>esc config set</code>) to update the registry URL or credentials.
+4. Changes are persisted and applied on the next install or upgrade.</p>
+<h3 id="62-detailed-use-cases-prioritized">6.2 Detailed Use Cases (Prioritized)<a class="headerlink" href="#62-detailed-use-cases-prioritized" title="Permanent link">&para;</a></h3>
+<p><strong>Core (P0 — Need to Have):</strong></p>
+<blockquote>
+<p>As a customer admin, I want to choose between Docker Hub and a custom Artifactory repository as my image source during installation, so that I can comply with my organization's registry policy from the start.</p>
+<p>As a customer admin, I want to provide authentication credentials for my Artifactory repository during setup, so that the installer can pull images from a private registry.</p>
+<p>As a customer admin, I want to install Event Streaming Client by pulling its Docker image from my corporate Artifactory repository, so that I comply with my organization's policy of scanning all images before deployment.</p>
+<p>As a customer admin, I want to upgrade Event Streaming Client (both automatically and manually) using my configured Artifactory source, so that upgrading does not require me to bypass or reconfigure my security controls.</p>
+<p>As a customer admin, I want to view the current image source configuration (mode and non-sensitive settings) and edit it when needed, so that I can maintain and update the Artifactory setup over time without reinstalling.</p>
+</blockquote>
+<p><strong>Auxiliary (P1 — Nice to Have):</strong></p>
+<blockquote>
+<p>As a customer admin, I want the installer to validate connectivity and authentication against Artifactory before attempting to pull, so that I receive actionable errors immediately if configuration is wrong.</p>
+<p>As a customer admin, I want all Artifactory-related errors to produce clear, actionable messages in the Event Streaming Client logs, so that I can diagnose and resolve issues without engaging Netskope support.</p>
+<p>As a customer admin, I want failed image pulls due to Artifactory issues to be surfaced as alerts in the Netskope Management Console, so that I am made aware of upgrade failures without monitoring the host directly.</p>
+<p>As a customer admin, I want the installer and watcher to automatically retry failed image pulls on a regular schedule (at least once per day), so that a temporary Artifactory outage does not permanently block upgrades without manual intervention.</p>
+</blockquote>
+<p><strong>Deferred (P2 — Deliver after initial release):</strong></p>
+<blockquote>
+<p>As a customer admin, I want the installer to verify that the Docker images pulled from Artifactory were genuinely issued and signed by Netskope, so that I am protected against accidentally deploying a tampered or non-Netskope image from my Artifactory repository.</p>
+<p>As a customer admin, I want to configure a Docker-compatible registry other than Artifactory (e.g., AWS ECR, Azure Container Registry, Harbor, Nexus) as my image source, so that I can comply with my organization's registry policy regardless of which registry product is in use — provided Netskope formally supports it.</p>
+</blockquote>
+<p><strong>Out of Scope:</strong>
+- Kubernetes and Helm-based deployments — separate feature track required.
+- Installer binary download/updates via Artifactory — not in this iteration.
+- Netskope managing or provisioning the customer's Artifactory instance.
+- Automatic image mirroring from Netskope registry to customer Artifactory.
+- Support for non-Docker artifact types (Helm charts, RPMs) via Artifactory.</p>
+<h3 id="63-use-case-priority-summary">6.3 Use Case Priority Summary<a class="headerlink" href="#63-use-case-priority-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Requirement Summary</th>
+<th>Target Phase</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>Installer prompts to choose Docker Hub or Artifactory as image source</td>
+<td>GA</td>
+<td>Core setup flow</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>Authentication credentials (username + token/password) configurable for Artifactory</td>
+<td>GA</td>
+<td>Mandatory — Artifactory is private</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>Install via Artifactory with persisted configuration</td>
+<td>GA</td>
+<td>Blocking requirement for SIX Group and similar customers</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>Automatic and manual upgrades work with Artifactory source configured</td>
+<td>GA</td>
+<td>Artifactory must not degrade upgrade capability</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>View current source mode + config (secrets masked); edit via CLI command</td>
+<td>GA</td>
+<td>Required for ongoing administration</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Pre-pull connectivity and auth validation with clear error messaging</td>
+<td>GA</td>
+<td>Improves operator experience</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Clear error messages in ESC logs for all Artifactory-related failures</td>
+<td>GA</td>
+<td>Required for operator self-service diagnosis</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Artifactory failure alerts collected internally (ENG-only access) — no customer UI in this iteration</td>
+<td>GA</td>
+<td>Internal telemetry pipeline enables Support to assist on escalations; no customer-facing UI required for initial release. See BR-016.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Customer-visible Management Console UI: upgrade history, repository failure status, Warning indicator cleared on recovery</td>
+<td>Post-GA</td>
+<td>UX design required; ENG UI/backend review required; see §9.0</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Automatic retry of failed image pulls (at least once per day; no overloading Artifactory); retry behavior documented in online help</td>
+<td>GA</td>
+<td>Prevents permanent upgrade blocks from transient Artifactory outages</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Audit log entry when admin selects a custom image source</td>
+<td>GA</td>
+<td>Traceability requirement per analytics/reporting spec</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Netskope image signature verification — installer validates image was issued by Netskope</td>
+<td>Post-GA</td>
+<td>Can ship without for initial release; Engineering must investigate and ballpark scope before GA</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Full custom source — support Docker-compatible registries beyond Artifactory (e.g., ECR, ACR, Harbor, Nexus)</td>
+<td>Post-GA</td>
+<td>Engineering to evaluate supportable registry options; supportability model required before committing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-product-behavior-corner-cases-npi-phase-concept">7. Product Behavior &amp; Corner Cases [NPI Phase: Concept]<a class="headerlink" href="#7-product-behavior-corner-cases-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<h3 id="71-expected-product-behavior">7.1 Expected Product Behavior<a class="headerlink" href="#71-expected-product-behavior" title="Permanent link">&para;</a></h3>
+<p>During installation, the admin is presented with a choice of image source: Docker Hub (default) or a custom Artifactory repository. If Artifactory is selected, the admin provides the registry URL and authentication credentials. The installer validates connectivity and credentials, then pulls the image and completes the install. The selected mode and configuration are persisted so that subsequent automatic and manual upgrades use the same source without requiring reconfiguration.</p>
+<p>The admin can inspect the current configuration at any time via a CLI command. Sensitive values (passwords, tokens) are never shown in plaintext — only the mode, registry URL, and credential username are displayed. The admin can update the configuration via a separate edit command.</p>
+<h3 id="72-happy-paths">7.2 Happy Paths<a class="headerlink" href="#72-happy-paths" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Trigger</th>
+<th>Expected Behavior</th>
+<th>UI/CLI State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setup: choose Docker Hub</td>
+<td>Admin selects Docker Hub during install</td>
+<td>Installer uses default public registry; no credentials required</td>
+<td>"Image source: Docker Hub (default)" confirmed</td>
+</tr>
+<tr>
+<td>Setup: choose Artifactory</td>
+<td>Admin selects Artifactory, provides URL + credentials</td>
+<td>Installer validates and persists config; pulls image from Artifactory</td>
+<td>"Image source: Artifactory — [URL]" confirmed; install proceeds</td>
+</tr>
+<tr>
+<td>Install via Artifactory</td>
+<td>Install with Artifactory configured</td>
+<td>Image pulled from Artifactory; install completes</td>
+<td>Success message with registry URL shown</td>
+</tr>
+<tr>
+<td>Manual upgrade via Artifactory</td>
+<td>Admin runs upgrade command</td>
+<td>Persisted Artifactory config used automatically; new image pulled</td>
+<td>Success message with new version and registry URL</td>
+</tr>
+<tr>
+<td>Auto upgrade via Artifactory</td>
+<td>Automatic upgrade triggered</td>
+<td>Same as manual upgrade; no admin interaction required</td>
+<td>Upgrade completes silently using Artifactory</td>
+</tr>
+<tr>
+<td>View current source config</td>
+<td>Admin runs <code>esc config show</code></td>
+<td>Displays: mode, registry URL, auth username. Secrets masked.</td>
+<td>Output shows <code>password: ****</code> or <code>token: ****</code></td>
+</tr>
+<tr>
+<td>Edit source config</td>
+<td>Admin runs <code>esc config set</code></td>
+<td>Admin updates URL or credentials; new values persisted</td>
+<td>Confirmation of updated config shown</td>
+</tr>
+</tbody>
+</table>
+<h3 id="73-sad-paths-error-states">7.3 Sad Paths &amp; Error States<a class="headerlink" href="#73-sad-paths-error-states" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Error Type</th>
+<th>User-Facing Message</th>
+<th>Recovery Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Artifactory URL unreachable</td>
+<td>Expected (network/config)</td>
+<td>"Unable to reach registry at [URL]. Verify network connectivity and registry URL."</td>
+<td>Admin checks network path, firewall rules, and URL config</td>
+</tr>
+<tr>
+<td>Authentication failure at setup</td>
+<td>Expected (credentials)</td>
+<td>"Authentication failed for registry at [URL]. Check username and token/password."</td>
+<td>Admin re-enters credentials; rotates token if expired</td>
+</tr>
+<tr>
+<td>Authentication failure at upgrade</td>
+<td>Expected (credentials)</td>
+<td>"Upgrade failed: authentication failed for registry at [URL]. Run <code>esc config set</code> to update credentials."</td>
+<td>Admin updates credentials via config edit command</td>
+</tr>
+<tr>
+<td>Image not found in Artifactory</td>
+<td>Expected (mirroring gap)</td>
+<td>"Image [image:tag] not found in registry at [URL]. Ensure the image has been mirrored to your Artifactory instance."</td>
+<td>Admin mirrors the image into Artifactory</td>
+</tr>
+<tr>
+<td>Image pull denied (policy/scan block)</td>
+<td>Expected (policy)</td>
+<td>"Pull was denied by the registry. The image may not have passed your organization's vulnerability scan policy."</td>
+<td>Security team approves the image in Artifactory</td>
+</tr>
+<tr>
+<td>Artifactory returns unexpected error</td>
+<td>Unexpected</td>
+<td>"Registry returned an unexpected error [HTTP status]. Contact your Artifactory administrator."</td>
+<td>Admin escalates to security/platform team</td>
+</tr>
+<tr>
+<td>Auto upgrade fails due to Artifactory issue</td>
+<td>Expected</td>
+<td>Auto-upgrade aborts; error is written to ESC logs with the specific failure reason (HTTP status, DNS, timeout); alert is surfaced in the Management Console; retry is scheduled for the next retry window (minimum once per day)</td>
+<td>Admin investigates Artifactory; retry fires automatically — manual intervention only needed if the issue persists beyond the retry window</td>
+</tr>
+<tr>
+<td>Retry attempt succeeds after prior failure</td>
+<td>Expected (recovery)</td>
+<td>Upgrade completes using Artifactory; prior failure alert is cleared from Management Console</td>
+<td>No admin action required</td>
+</tr>
+<tr>
+<td>Retry attempts continue to fail (persistent Artifactory issue)</td>
+<td>Expected (persistent)</td>
+<td>Each failure is logged; Management Console alert remains active; retry continues on schedule without overloading Artifactory</td>
+<td>Admin escalates to security/platform team to resolve Artifactory issue</td>
+</tr>
+</tbody>
+</table>
+<h3 id="74-faq-design-decisions">7.4 FAQ &amp; Design Decisions<a class="headerlink" href="#74-faq-design-decisions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q: Does Netskope push images to the customer's Artifactory?</td>
+<td>A: No. Customers mirror images themselves.</td>
+<td>Netskope has no access to customer-internal infrastructure.</td>
+</tr>
+<tr>
+<td>Q: Can customers use Artifactory as a pull-through proxy instead of a local mirror?</td>
+<td>A: Yes, if configured on the Artifactory side. The installer only needs a valid registry URL.</td>
+<td>Keeps Netskope's scope minimal — the installer is registry-agnostic as long as Docker v2 protocol is used.</td>
+</tr>
+<tr>
+<td>Q: Does switching to Artifactory disable automatic upgrades?</td>
+<td>A: No. Both automatic and manual upgrades must work with Artifactory configured.</td>
+<td>Requirement explicitly stated — Artifactory must not degrade upgrade capability.</td>
+</tr>
+<tr>
+<td>Q: Can the admin switch back from Artifactory to Docker Hub after initial setup?</td>
+<td>A: Yes, via the config edit command.</td>
+<td>The mode is a persistent but mutable configuration.</td>
+</tr>
+<tr>
+<td>Q: What if the customer's Artifactory requires TLS with a custom CA?</td>
+<td>A: The installer prompts for a CA certificate path when Artifactory mode is selected. The certificate is placed in the appropriate runtime path: <code>/etc/docker/certs.d/</code> (Docker), <code>/etc/containers/certs.d/</code> (Podman system), or <code>~/.config/containers/certs.d/</code> (Podman rootless). If the certificate is already in the OS trust store, the customer can skip this step. See §8.6.</td>
+<td>TLS with custom CA is standard in enterprise Artifactory deployments; now specified in §8.6.</td>
+</tr>
+<tr>
+<td>Q: Could a customer accidentally deploy a non-Netskope or tampered image via Artifactory?</td>
+<td>A: Yes — this is a known risk of using a customer-managed registry. Image signature verification (P2) is identified to address this, but is not required for initial delivery. Customers are advised to control access to their Artifactory repository.</td>
+<td>P2 feature deferred to post-GA to meet customer timeline.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-detailed-product-specifications-npi-phase-conceptdesign">8. Detailed Product Specifications [NPI Phase: Concept/Design]<a class="headerlink" href="#8-detailed-product-specifications-npi-phase-conceptdesign" title="Permanent link">&para;</a></h2>
+<h3 id="81-registry-source-mode">8.1 Registry Source Mode<a class="headerlink" href="#81-registry-source-mode" title="Permanent link">&para;</a></h3>
+<p>The installer exposes a source mode setting with two values:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dockerhub</code></td>
+<td>Default. Pulls images from the Netskope public Docker Hub registry. No credentials required.</td>
+</tr>
+<tr>
+<td><code>artifactory</code></td>
+<td>Pulls images from the configured Artifactory registry URL. Authentication credentials required.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Mode is set interactively</strong> during install and persisted in the installer configuration store.</li>
+<li><strong>Mode is mutable</strong> — admin can switch modes post-install via the config edit command.</li>
+</ul>
+<blockquote>
+<p><strong>P2 — Full Custom Source:</strong> Engineering should evaluate whether the <code>artifactory</code> mode can be generalized to support other Docker Registry API v2-compatible registries (e.g., AWS ECR, Azure Container Registry, Harbor, Nexus). If technically feasible, a future mode (e.g., <code>custom</code>) or a broadened <code>artifactory</code> mode could cover these. <strong>Supportability is the key constraint:</strong> Netskope must be able to realistically support the auth models, TLS configurations, and error surfaces of any registry it endorses. Engineering must propose a supportability model — potentially a tested/supported registry list — before this is committed. See OI-010.
+- <strong>Default mode:</strong> <code>dockerhub</code> (no regression for existing deployments).</p>
+</blockquote>
+<h3 id="82-registry-configuration-artifactory-mode">8.2 Registry Configuration (Artifactory Mode)<a class="headerlink" href="#82-registry-configuration-artifactory-mode" title="Permanent link">&para;</a></h3>
+<p>When mode is <code>artifactory</code>:</p>
+<ul>
+<li><strong>Registry URL</strong> — required. Artifactory supports three URL patterns; the installer must accept all three:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Format</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Repository path (recommended)</td>
+<td><code>artifactory.corp.example.com/artifactory/docker-repo</code></td>
+<td>Most common in enterprise; works without subdomain DNS setup</td>
+</tr>
+<tr>
+<td>Port-based</td>
+<td><code>artifactory.corp.example.com:8443</code></td>
+<td>Each repository gets a unique port; less common</td>
+</tr>
+<tr>
+<td>Subdomain</td>
+<td><code>docker-repo.artifactory.corp.example.com</code></td>
+<td>Requires DNS wildcard; repository names must not contain underscores</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Scope:</strong> Applies to <strong>all</strong> Docker/Podman image pull operations during install and upgrade — both <code>netskope/nsstreamingclient:stable</code> and <code>netskope/nswatcher:stable</code>. Does not affect installer Python script download (via <code>/api/v2/streamingclient/installer</code>).</li>
+</ul>
+<h3 id="83-authentication">8.3 Authentication<a class="headerlink" href="#83-authentication" title="Permanent link">&para;</a></h3>
+<p>Authentication is <strong>mandatory</strong> when mode is <code>artifactory</code>. The installer must not allow Artifactory mode to be saved without credentials.</p>
+<p>Artifactory supports three credential types; the installer must accept all three:</p>
+<table>
+<thead>
+<tr>
+<th>Credential Type</th>
+<th>Format</th>
+<th>Recommended for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Username + Password</td>
+<td>Plain credentials</td>
+<td>Development/test only; discouraged for production</td>
+</tr>
+<tr>
+<td>Username + API Key</td>
+<td>API Key from Artifactory user profile</td>
+<td>Standard enterprise use</td>
+</tr>
+<tr>
+<td>Username + Identity Token</td>
+<td>Service account token (modern approach)</td>
+<td>Preferred for automated/service deployments</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Implementation:</strong> Credentials are passed to Docker/Podman via <code>docker login &lt;registry-url&gt;</code> (Ubuntu/Docker) or <code>podman login &lt;registry-url&gt;</code> (RHEL/Podman). The installer invokes the appropriate login command for the detected runtime; credentials are stored in the Docker/Podman credential store (<code>~/.docker/config.json</code> on Docker; <code>~/.config/containers/auth.json</code> on rootless Podman) rather than in a separate installer config file.</li>
+<li><strong>Storage:</strong> Credentials reside in the runtime's native credential store. The installer must not write credentials to its own config files in plaintext.</li>
+<li><strong>Display rule:</strong> Credentials are never shown in plaintext in any CLI output, logs, or diagnostic output. Username may be displayed; password/token must be masked (<code>****</code>).</li>
+<li><strong>Rotation:</strong> Admin can update credentials at any time via the config edit command, which re-runs <code>docker login</code> / <code>podman login</code> with the new credentials without reinstalling.</li>
+</ul>
+<h3 id="84-upgrade-compatibility">8.4 Upgrade Compatibility<a class="headerlink" href="#84-upgrade-compatibility" title="Permanent link">&para;</a></h3>
+<p>Configuring Artifactory as the image source must not restrict or disable any existing upgrade capability:</p>
+<ul>
+<li><strong>Manual upgrades</strong> (run installer with <code>reinstall</code> option) must use the persisted Artifactory configuration automatically.</li>
+<li><strong>Automatic upgrades</strong> (weekly, performed by the watcher container <code>netskope/nswatcher:stable</code>) must also use the Artifactory registry. The watcher container pulls the updated <code>netskope/nsstreamingclient:stable</code> image — this pull must use the configured Artifactory source, not Docker Hub.</li>
+<li>If an automatic upgrade fails due to an Artifactory error (e.g., image not yet mirrored), the failure must be surfaced via the existing upgrade failure notification mechanism (Docker/Podman logs).</li>
+</ul>
+<h3 id="85-configuration-view-and-edit-commands">8.5 Configuration View and Edit Commands<a class="headerlink" href="#85-configuration-view-and-edit-commands" title="Permanent link">&para;</a></h3>
+<p>Two CLI operations are required:</p>
+<p><strong>View (<code>esc config show</code> or equivalent):</strong>
+- Displays: current mode (<code>dockerhub</code> / <code>artifactory</code>), registry URL (if Artifactory), authentication username (if Artifactory).
+- Secrets (password / token) are always masked.</p>
+<p><strong>Edit (<code>esc config set</code> or equivalent):</strong>
+- Allows updating: mode, registry URL, authentication credentials.
+- On save, validates connectivity and authentication if mode is <code>artifactory</code>.
+- On validation failure, does not persist the new configuration and surfaces an error.</p>
+<h3 id="86-tls-certificate-handling">8.6 TLS / Certificate Handling<a class="headerlink" href="#86-tls-certificate-handling" title="Permanent link">&para;</a></h3>
+<p>TLS is <strong>required</strong> for Artifactory authentication — Docker and Podman both enforce HTTPS for any registry that uses credentials. Enterprise deployments typically use a self-signed certificate or an internal CA that is not trusted by the OS by default.</p>
+<p>The installer must handle both runtimes:</p>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th>CA Certificate Path</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker (Ubuntu)</td>
+<td><code>/etc/docker/certs.d/&lt;hostname&gt;:&lt;port&gt;/ca.crt</code></td>
+<td>Per-registry directory; Docker reads automatically on pull</td>
+</tr>
+<tr>
+<td>Podman — system (RHEL, root)</td>
+<td><code>/etc/containers/certs.d/&lt;hostname&gt;:&lt;port&gt;/ca.crt</code></td>
+<td>Same directory convention as Docker</td>
+</tr>
+<tr>
+<td>Podman — rootless (RHEL, user)</td>
+<td><code>~/.config/containers/certs.d/&lt;hostname&gt;:&lt;port&gt;/ca.crt</code></td>
+<td>User-scoped path; must be used for rootless Podman installs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requirements:</strong>
+- The installer must prompt the customer for the path to their CA certificate file if Artifactory mode is selected.
+- The installer copies or references the CA certificate to the appropriate runtime path for the detected runtime and privilege level.
+- If the customer's Artifactory uses a publicly trusted certificate (i.e., already in the OS trust store), no additional CA configuration is needed — the installer should offer this as an option ("Use system certificate store").
+- The <code>--tls-verify=false</code> flag (Podman) and equivalent insecure-registry settings (Docker) must <strong>not</strong> be used; they defeat the security purpose of Artifactory in a controlled environment.</p>
+<h3 id="87-platform-priority">8.7 Platform Priority<a class="headerlink" href="#87-platform-priority" title="Permanent link">&para;</a></h3>
+<p>RedHat Enterprise Linux support is a higher priority than Ubuntu for this feature. Engineering should target RHEL compatibility first.</p>
+<h3 id="88-alternative-registry-landscape-p2-scope-input">8.8 Alternative Registry Landscape (P2 Scope Input)<a class="headerlink" href="#88-alternative-registry-landscape-p2-scope-input" title="Permanent link">&para;</a></h3>
+<p>Research finding for the P2 full custom source requirement (OI-010): all major enterprise private registries use the <strong>OCI Distribution Specification</strong> (the industry-standard successor to Docker Registry API v2). This means the authentication and pull protocol is structurally identical across registries — the primary variation is in credential type and TLS configuration.</p>
+<table>
+<thead>
+<tr>
+<th>Registry</th>
+<th>Deployment Model</th>
+<th>Authentication</th>
+<th>High-Security / FedRAMP Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>JFrog Artifactory</strong></td>
+<td>Self-hosted or cloud</td>
+<td>Username + password, API key, identity token</td>
+<td>Widely used in regulated enterprise; supports immutable repos and build promotion</td>
+</tr>
+<tr>
+<td><strong>Harbor</strong> (CNCF)</td>
+<td>Self-hosted, open-source</td>
+<td>LDAP/AD, OIDC (Azure AD, Okta, Keycloak)</td>
+<td>Strong FedRAMP fit; built-in vulnerability scanning and image signing; Kubernetes-native</td>
+</tr>
+<tr>
+<td><strong>Red Hat Quay</strong></td>
+<td>Self-hosted or cloud</td>
+<td>LDAP, OIDC</td>
+<td>Preferred in RHEL/OpenShift environments; strong in regulated industries</td>
+</tr>
+<tr>
+<td><strong>Sonatype Nexus</strong></td>
+<td>Self-hosted</td>
+<td>Username/password, LDAP/AD, token</td>
+<td>Common in enterprises that manage multiple artifact types (Maven, npm, Docker); requires Docker Bearer Token Realm</td>
+</tr>
+<tr>
+<td><strong>AWS ECR</strong></td>
+<td>Cloud (AWS-hosted)</td>
+<td>AWS IAM credentials (AWS CLI <code>ecr get-login-password</code>)</td>
+<td>FedRAMP-authorized; dominant in AWS-native air-gapped environments (GovCloud)</td>
+</tr>
+<tr>
+<td><strong>Azure Container Registry (ACR)</strong></td>
+<td>Cloud (Azure-hosted)</td>
+<td>Azure AD / service principal</td>
+<td>FedRAMP-authorized; dominant in Azure Gov environments</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key finding for P2 scoping:</strong> Harbor is the most relevant alternative for high-security customers who do not use Artifactory. It is open-source, CNCF-backed, and architecturally designed for regulated environments. ECR and ACR are dominant in cloud-native government deployments. Nexus and Quay serve customers who already standardized on those vendors for other artifact types.</p>
+<p><strong>Supportability constraint (from OI-010):</strong> All six registries above use OCI Distribution Spec over HTTPS — the pull protocol is identical. The differentiation is in <strong>how credentials are obtained</strong> (static token vs. short-lived AWS/Azure IAM token). ECR and ACR require runtime credential refresh (tokens expire), which adds complexity the installer must handle. Artifactory, Harbor, Nexus, and Quay all use long-lived tokens compatible with <code>docker login</code> / <code>podman login</code>. Engineering should propose a supportability model based on this distinction.</p>
+<hr />
+<h2 id="9-ui-screens-workflows-npi-phase-concept">9. UI Screens &amp; Workflows [NPI Phase: Concept]<a class="headerlink" href="#9-ui-screens-workflows-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<h3 id="90-admin-console-ui-current-state-and-p2-target">9.0 Admin Console UI — Current State and P2 Target<a class="headerlink" href="#90-admin-console-ui-current-state-and-p2-target" title="Permanent link">&para;</a></h3>
+<p><strong>P1 — No UI (current state):</strong> Event Streaming Client currently has no Admin Console UI. This feature is CLI/configuration-driven via the existing Python installer script (<code>netskope_event_streamingclient_installer.py</code>). There is no Admin Console UI surface for this iteration.</p>
+<p><strong>P2 — Alerts &amp; Monitoring UI (target state):</strong> When customer-visible alerting and monitoring is delivered (post-GA), the Admin Console UI must surface the following for each ESC deployment:</p>
+<table>
+<thead>
+<tr>
+<th>UI Element</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Upgrade history</td>
+<td>Display when the last upgrade occurred (timestamp and version)</td>
+</tr>
+<tr>
+<td>Repository access failures</td>
+<td>Display if there has been a failure to access the configured repository, and when the failure occurred</td>
+</tr>
+<tr>
+<td>ESC status indicator</td>
+<td>Status changes to <strong>Warning</strong> when there is an active repository access failure; Warning is cleared automatically once repository access is restored and a successful pull is confirmed</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: The UX team must design this surface. PM has provided the behavioral requirements above as input. ENG UI/backend must review and approve the final UX design. Reference: Google Drive Document (linked in Jira).</p>
+</blockquote>
+<h3 id="91-installer-image-source-setup-during-install">9.1 Installer: Image Source Setup During Install<a class="headerlink" href="#91-installer-image-source-setup-during-install" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose:</strong> Allow the admin to choose and configure the image source (Docker Hub or Artifactory) as part of the existing interactive install flow.</p>
+<p><strong>Entry point:</strong> <code>python3 netskope_event_streamingclient_installer.py</code> → option <code>1. install</code></p>
+<p>The image source prompt fits into the existing install flow after the system checks pass and before image pull begins:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3 netskope_event_streamingclient_installer.py
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>NETSKOPE LOG STREAM CLIENT INSTALLER I.2026.x.x
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Please specify an option:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>1. install           - Set up and configure the container
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>2. reinstall         - Remove and recreate the container
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>3. uninstall         - Remove the container and cleanup
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>4. update_client_key - Update client key and restart container
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>5. show_config       - Display current image source configuration
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>6. update_registry   - Update image source URL or credentials
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Enter option (install/reinstall/uninstall/update_client_key): 1
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>INSTALLATION
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>&gt;&gt;&gt; Checking if operating system is supported...
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>SUCCESS: Check for operating system passed.
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>&gt;&gt;&gt; Checking if Docker/Podman is installed and running...
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>SUCCESS: All system checks passed.
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>&gt;&gt;&gt; Configuring image source...
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>Select image source:
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  1. Docker Hub (default — requires internet access to hub.docker.com)
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  2. Custom Artifactory repository
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>Enter choice [1]: 2
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>Artifactory registry URL (e.g. artifactory.corp.example.com/netskope): artifactory.corp.example.com/netskope
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>Username: svc-netskope
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>Password/Token: ********
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>&gt;&gt;&gt; Validating registry connectivity and credentials...
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>SUCCESS: Registry reachable. Authentication successful.
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>INFO: Image source configured: Artifactory — artifactory.corp.example.com/netskope
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>&gt;&gt;&gt; Pulling Docker image: artifactory.corp.example.com/netskope/nsstreamingclient:stable
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>...
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>SUCCESS: Docker image pulled successfully!
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>&gt;&gt;&gt; Pulling watcher image: artifactory.corp.example.com/netskope/nswatcher:stable
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>...
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>SUCCESS: Watcher image pulled successfully!
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>INSTALLATION COMPLETE
+</code></pre></div>
+<p><strong>On validation failure (auth):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>✗ Authentication failed for registry at artifactory.corp.example.com/netskope
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  Check your username and password/token, then retry.
+</code></pre></div></p>
+<p><strong>On validation failure (connectivity):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>✗ Unable to reach registry at artifactory.corp.example.com/netskope
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  Verify the URL and that the registry is reachable from this host.
+</code></pre></div></p>
+<hr />
+<h3 id="92-config-view-image-source-configuration">9.2 Config View: Image Source Configuration<a class="headerlink" href="#92-config-view-image-source-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose:</strong> Allow admin to inspect the current image source mode and non-sensitive settings post-install.</p>
+<p><strong>Entry point:</strong> New installer menu option <code>5. show_config</code>, consistent with the existing <code>update_client_key</code> pattern.</p>
+<p><strong>Expected output (Artifactory mode):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Image Source Configuration
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>--------------------------
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Mode:         artifactory
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Registry URL: artifactory.corp.example.com/netskope
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Username:     svc-netskope
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Password:     ****
+</code></pre></div></p>
+<p><strong>Expected output (Docker Hub mode):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Image Source Configuration
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>--------------------------
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Mode:         dockerhub (default)
+</code></pre></div></p>
+<hr />
+<h3 id="93-config-edit-update-image-source-post-install">9.3 Config Edit: Update Image Source Post-Install<a class="headerlink" href="#93-config-edit-update-image-source-post-install" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose:</strong> Allow admin to update the Artifactory URL or credentials without reinstalling.</p>
+<p><strong>Entry point:</strong> New installer menu option <code>6. update_registry</code>, consistent with the existing <code>update_client_key</code> option pattern.</p>
+<p><strong>Expected flow:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Enter option: 6  [update_registry]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Current image source: Artifactory — artifactory.corp.example.com/netskope (user: svc-netskope)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Update registry URL? [y/n]: y
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>New registry URL: artifactory-new.corp.example.com/netskope
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Update credentials? [y/n]: y
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>Username: svc-netskope
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Password/Token: ********
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>&gt;&gt;&gt; Validating...
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>SUCCESS: Configuration saved. Artifactory will be used for all future installs and upgrades.
+</code></pre></div></p>
+<hr />
+<h2 id="10-componentfeature-catalog-npi-phase-concept">10. Component/Feature Catalog [NPI Phase: Concept]<a class="headerlink" href="#10-componentfeature-catalog-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Category</th>
+<th>Platform Priority</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Image source mode selection (Docker Hub / Artifactory)</td>
+<td>Installer / Deploy</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon</td>
+<td>Interactive setup to choose image source at install time</td>
+</tr>
+<tr>
+<td>Artifactory registry URL configuration</td>
+<td>Installer / Deploy</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon</td>
+<td>Configurable registry URL for Artifactory mode</td>
+</tr>
+<tr>
+<td>Artifactory authentication (username + token/password)</td>
+<td>Installer / Deploy</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon</td>
+<td>Mandatory credential support for private Artifactory registries</td>
+</tr>
+<tr>
+<td>Config view command (<code>esc config show</code>)</td>
+<td>Installer / Admin</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon</td>
+<td>Displays current mode and non-sensitive config; masks secrets</td>
+</tr>
+<tr>
+<td>Config edit command (<code>esc config set</code>)</td>
+<td>Installer / Admin</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon</td>
+<td>Updates mode, URL, and credentials; validates on save</td>
+</tr>
+<tr>
+<td>Upgrade compatibility with Artifactory (auto + manual)</td>
+<td>Installer / Upgrade</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon</td>
+<td>Ensures persisted Artifactory config is used for all upgrade paths</td>
+</tr>
+<tr>
+<td>Pre-pull connectivity and auth validation</td>
+<td>Installer / Deploy</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon (P1)</td>
+<td>Validates registry before pull attempt; surfaces actionable errors</td>
+</tr>
+<tr>
+<td>Custom CA / TLS support</td>
+<td>Installer / Deploy</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon (P1)</td>
+<td>Support for Artifactory with enterprise CA certificates; installer prompts for CA cert path and places it in the correct runtime directory (see §8.6)</td>
+</tr>
+<tr>
+<td>Structured error logging for Artifactory failures</td>
+<td>Installer / Observability</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon (P1)</td>
+<td>All Artifactory-related errors written to ESC logs with clear, structured messages including failure reason, registry URL, and HTTP status where applicable</td>
+</tr>
+<tr>
+<td>Internal alert collection for Artifactory failures</td>
+<td>Installer / Observability</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon (P1)</td>
+<td>Failed image pull data collected via internal telemetry pipeline so Netskope Support can diagnose on customer escalation; no customer-facing UI in this iteration</td>
+</tr>
+<tr>
+<td>Management Console UI — alerts &amp; monitoring</td>
+<td>Admin Console / Observability</td>
+<td>TBD</td>
+<td>Post-GA (P2)</td>
+<td>Customer-visible surface showing upgrade history, repository failure timestamps, and ESC warning status; Warning cleared automatically on successful repository access restoration; UX design + ENG UI/backend review required</td>
+</tr>
+<tr>
+<td>Automatic retry mechanism for failed image pulls</td>
+<td>Installer / Upgrade</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Coming Soon (P1)</td>
+<td>Retries failed pulls on a scheduled basis (at least once per day); no thundering herd / Artifactory overload; retry behavior documented in online help</td>
+</tr>
+<tr>
+<td>Netskope image signature verification</td>
+<td>Installer / Security</td>
+<td>RHEL first, then Ubuntu</td>
+<td>Post-GA (P2)</td>
+<td>Verify pulled images were signed by Netskope; protects against tampered or substituted images in Artifactory; Engineering to research approach (e.g., cosign/Sigstore, Docker Content Trust) and ballpark scope before GA</td>
+</tr>
+<tr>
+<td>Full custom source (registry beyond Artifactory)</td>
+<td>Installer / Deploy</td>
+<td>TBD</td>
+<td>Post-GA (P2)</td>
+<td>Support Docker Registry API v2-compatible registries other than Artifactory (e.g., ECR, ACR, Harbor, Nexus); contingent on Engineering defining a supportability model (tested registry list, supported auth models) — see OI-010</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-business-rules-npi-phase-concept">11. Business Rules [NPI Phase: Concept]<a class="headerlink" href="#11-business-rules-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rule ID</th>
+<th>Condition</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BR-001</td>
+<td>Mode is <code>artifactory</code></td>
+<td>Installer uses the configured registry URL for all Docker image pulls during install and upgrade</td>
+</tr>
+<tr>
+<td>BR-002</td>
+<td>Mode is <code>dockerhub</code> or not set</td>
+<td>Installer uses the default public Netskope Docker Hub registry (no change from current behavior)</td>
+</tr>
+<tr>
+<td>BR-003</td>
+<td>Admin attempts to save Artifactory mode without credentials</td>
+<td>Configuration is rejected; installer requires username + password/token before persisting</td>
+</tr>
+<tr>
+<td>BR-004</td>
+<td>Admin runs <code>esc config set</code> with mode <code>artifactory</code></td>
+<td>Installer validates connectivity and authentication before persisting; rejects on failure</td>
+</tr>
+<tr>
+<td>BR-005</td>
+<td>Registry returns HTTP 401</td>
+<td>Installer surfaces an authentication error with guidance to check credentials via <code>esc config set</code></td>
+</tr>
+<tr>
+<td>BR-006</td>
+<td>Registry returns HTTP 403</td>
+<td>Installer surfaces a permission/policy denial error</td>
+</tr>
+<tr>
+<td>BR-007</td>
+<td>Registry returns HTTP 404</td>
+<td>Installer surfaces an image-not-found error with guidance to mirror the image to Artifactory</td>
+</tr>
+<tr>
+<td>BR-008</td>
+<td>Registry is unreachable (timeout / DNS failure)</td>
+<td>Installer surfaces a connectivity error with the configured URL</td>
+</tr>
+<tr>
+<td>BR-009</td>
+<td>Automatic upgrade is triggered with mode <code>artifactory</code></td>
+<td>Upgrade proceeds using persisted Artifactory config and credentials; no admin interaction required</td>
+</tr>
+<tr>
+<td>BR-010</td>
+<td>Admin runs <code>esc config show</code></td>
+<td>Password/token fields are always masked (<code>****</code>); username and URL are shown in plaintext</td>
+</tr>
+<tr>
+<td>BR-011</td>
+<td>Credentials are written to any log, diagnostic output, or audit record</td>
+<td>Credentials must be masked or omitted; never written in plaintext</td>
+</tr>
+<tr>
+<td>BR-012</td>
+<td>Kubernetes / Helm deployment is detected</td>
+<td>Feature is not applicable; no Artifactory support for K8s/Helm in this iteration</td>
+</tr>
+<tr>
+<td>BR-013</td>
+<td>Platform is RHEL vs. Ubuntu</td>
+<td>RHEL support is delivered first; Ubuntu support follows in a subsequent release</td>
+</tr>
+<tr>
+<td>BR-014</td>
+<td>Image signature verification is enabled (P2) and pulled image fails signature check</td>
+<td>Installer aborts the install or upgrade with an error message indicating verification failure; no container is started from an unverified image</td>
+</tr>
+<tr>
+<td>BR-015</td>
+<td>Any Artifactory-related error occurs (install or upgrade)</td>
+<td>A structured error message is written to the ESC log including: error type, registry URL, HTTP status code (where applicable), and a human-readable description of the failure and recommended action</td>
+</tr>
+<tr>
+<td>BR-016</td>
+<td>An image pull fails during automatic upgrade</td>
+<td>Failure data is reported via internal telemetry so Netskope Support can assist on escalation (P1). In the P2 customer-visible UI: the ESC's status indicator in the Management Console changes to Warning; the Warning is cleared automatically once repository access is restored and a successful pull is confirmed</td>
+</tr>
+<tr>
+<td>BR-017</td>
+<td>An automatic upgrade fails due to an Artifactory error</td>
+<td>The system schedules a retry; retries must occur at minimum once per day; retry intervals must not cause excessive load on the customer's Artifactory instance (e.g., no rapid retry loops); retry behavior must be documented in the online help</td>
+</tr>
+<tr>
+<td>BR-018</td>
+<td>Admin selects a custom Artifactory registry as the image source</td>
+<td>An audit log entry is written to the ESC log recording that the admin selected a custom source (registry URL logged; credentials not logged)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="12-analytics-reporting-npi-phase-concept">12. Analytics &amp; Reporting [NPI Phase: Concept]<a class="headerlink" href="#12-analytics-reporting-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Reporting Area</th>
+<th>Priority</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transaction events fields</td>
+<td>P1</td>
+<td>Not applicable — this feature does not modify transaction event fields</td>
+</tr>
+<tr>
+<td>Other event fields</td>
+<td>P1</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>Skope IT</td>
+<td>P1</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>Standard Reporting</td>
+<td>P1</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>NAA</td>
+<td>P1</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>Audit</td>
+<td>P1</td>
+<td>ESC logs must trace that an admin selected a custom image source (registry URL recorded; see BR-018). This is the primary audit trail for Artifactory mode activation.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Monitoring requirements</strong> <em>(telemetry and mandatory internal monitoring — Engineering owns dimension definition):</em></p>
+<table>
+<thead>
+<tr>
+<th>Monitoring Area</th>
+<th>Priority</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internal metrics</td>
+<td>P1</td>
+<td>Track how many ESC tenants/installs are using a custom image source (Artifactory mode) vs. Docker Hub default. Used to measure adoption and prioritize future investment.</td>
+</tr>
+<tr>
+<td>Error reporting</td>
+<td>P1</td>
+<td>Download failures must be reported internally so Netskope Support can diagnose and assist when customers escalate. Engineering to define the internal reporting pipeline (see OI-009).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="13-architecture-dependencies-constraints-npi-phase-designimplement">13. Architecture, Dependencies &amp; Constraints [NPI Phase: Design/Implement]<a class="headerlink" href="#13-architecture-dependencies-constraints-npi-phase-designimplement" title="Permanent link">&para;</a></h2>
+<h3 id="131-architecture-layers">13.1 Architecture Layers<a class="headerlink" href="#131-architecture-layers" title="Permanent link">&para;</a></h3>
+<p><strong>Current state (to be changed):</strong>
+The installer script pulls two Docker images directly from Docker Hub (<code>hub.docker.com</code>):
+- <code>netskope/nsstreamingclient:stable</code> — the main streaming container
+- <code>netskope/nswatcher:stable</code> — the watcher container responsible for weekly auto-upgrades</p>
+<p>Both pulls require outbound internet access to <code>hub.docker.com</code>. This is the exact network requirement that blocks SIX Group and similar customers.</p>
+<p><strong>Target state (this feature):</strong>
+When Artifactory mode is configured, both image pulls are redirected to the customer-specified Artifactory registry URL. The installer persists this configuration so the watcher container also uses Artifactory for all subsequent auto-upgrade pulls.</p>
+<p>Container runtime support:
+- <strong>Ubuntu:</strong> Docker (via systemd service)
+- <strong>RHEL 8/9:</strong> Podman (rootless, via <code>~/.config/containers/containers.conf</code>)</p>
+<p>The Artifactory configuration mechanism must work for both runtimes. On Docker, the installer invokes <code>docker login</code> and places CA certificates in <code>/etc/docker/certs.d/</code>. On Podman rootless, the installer invokes <code>podman login</code> and places CA certificates in <code>~/.config/containers/certs.d/</code>. Credentials are stored in the respective runtime's native credential store. See §8.3 and §8.6 for full specification.</p>
+<h3 id="132-dependencies">13.2 Dependencies<a class="headerlink" href="#132-dependencies" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dependency</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JFrog Artifactory</td>
+<td>External / Customer-managed</td>
+<td>Customer's internal Docker registry; must support Docker Registry API v2; must contain both <code>nsstreamingclient:stable</code> and <code>nswatcher:stable</code></td>
+</tr>
+<tr>
+<td><code>netskope_event_streamingclient_installer.py</code></td>
+<td>Internal</td>
+<td>Python installer script; must be modified to prompt for and persist Artifactory configuration</td>
+</tr>
+<tr>
+<td><code>netskope/nswatcher:stable</code> container</td>
+<td>Internal</td>
+<td>Watcher container performing auto-upgrades; must be updated to read and use persisted Artifactory configuration when pulling new images</td>
+</tr>
+<tr>
+<td>Docker (Ubuntu)</td>
+<td>External / Customer-managed</td>
+<td>Container runtime on Ubuntu; different registry auth configuration path than Podman</td>
+</tr>
+<tr>
+<td>Podman (RHEL)</td>
+<td>External / Customer-managed</td>
+<td>Rootless container runtime on RHEL 8/9; registry auth via <code>~/.config/containers/containers.conf</code></td>
+</tr>
+<tr>
+<td>Customer network infrastructure</td>
+<td>External / Customer-managed</td>
+<td>Network path from install host to Artifactory must be open</td>
+</tr>
+</tbody>
+</table>
+<h3 id="133-accessory-requirements">13.3 Accessory Requirements<a class="headerlink" href="#133-accessory-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>RBAC:</strong> N/A — no Admin Console changes in this iteration. Existing RBAC permission "Administration &gt; Event Streaming" (Manage) is sufficient.</li>
+<li><strong>API requirements:</strong> No new API required for this feature — configuration is handled entirely in the installer. If in a future iteration the Artifactory registry configuration should be manageable via API, it must be attached to the existing Client definition API (<code>/api/v2/streamingclient/</code>) rather than introduced as a standalone endpoint.</li>
+<li><strong>3rd party integrations:</strong> JFrog Artifactory (customer-managed). Netskope does not integrate with Artifactory directly.</li>
+<li><strong>Audit &amp; compliance:</strong> Install and upgrade actions with the configured registry URL must be traced in ESC logs. Selecting a custom Artifactory source must produce an explicit audit log entry (BR-018). Retry behavior must be documented in the online help so customers understand the automatic recovery mechanism.</li>
+<li><strong>Data sovereignty:</strong> No Netskope-managed data transits the customer's Artifactory. Images are customer-mirrored artifacts.</li>
+<li><strong>Security &amp; privacy:</strong> Credentials for Artifactory must not be logged in plaintext anywhere — installer output, Docker/Podman logs, or config file in unencrypted form.</li>
+<li><strong>Platform integration:</strong> No dependencies on other Netskope products.</li>
+</ul>
+<h3 id="134-constraints-guardrails">13.4 Constraints &amp; Guardrails<a class="headerlink" href="#134-constraints-guardrails" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Description</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker Registry API v2 only</td>
+<td>Artifactory must expose a Docker v2-compatible registry endpoint</td>
+<td>Non-Docker artifact types (Helm, RPM) are out of scope</td>
+</tr>
+<tr>
+<td>No Kubernetes / Helm</td>
+<td>K8s and Helm deployment modes are explicitly excluded</td>
+<td>Customers using K8s must wait for a future iteration</td>
+</tr>
+<tr>
+<td>Installer Python script unchanged</td>
+<td>The installer (<code>netskope_event_streamingclient_installer.py</code>) is still downloaded from the Netskope API; only Docker/Podman image pulls are redirected via Artifactory</td>
+<td>Scope is bounded; addresses the stated customer requirement</td>
+</tr>
+<tr>
+<td>Both images must be covered</td>
+<td>Both <code>netskope/nsstreamingclient:stable</code> AND <code>netskope/nswatcher:stable</code> must be pulled from Artifactory when in Artifactory mode</td>
+<td>If only the main image is covered, auto-upgrades will fail</td>
+</tr>
+<tr>
+<td>RHEL before Ubuntu</td>
+<td>RHEL 8/9 (Podman/rootless) support is delivered first; Ubuntu support follows in a subsequent release</td>
+<td>Engineering must handle Podman-specific registry auth on first delivery</td>
+</tr>
+<tr>
+<td>Secrets never in plaintext</td>
+<td>Authentication credentials must not appear in any installer output, Docker/Podman logs, or unencrypted config files</td>
+<td>Engineering must audit all output paths for credential leakage</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="14-gtm-npi-phase-implement">14. GTM [NPI Phase: Implement]<a class="headerlink" href="#14-gtm-npi-phase-implement" title="Permanent link">&para;</a></h2>
+<h3 id="141-pricing-packaging">14.1 Pricing &amp; Packaging<a class="headerlink" href="#141-pricing-packaging" title="Permanent link">&para;</a></h3>
+<p>No pricing change. Event Streaming Client requires an existing <strong>"Log Streaming"</strong> or <strong>"Transaction Event Streaming"</strong> license. Artifactory support is a deployment option within the existing license — no new SKU, add-on, or license tier required.</p>
+<h3 id="142-documentation">14.2 Documentation<a class="headerlink" href="#142-documentation" title="Permanent link">&para;</a></h3>
+<p>The following ESC documentation pages must be updated before GA. All updates are additive — no existing content is removed, only Artifactory-related steps and parameters are added.</p>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Updates Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Event Streaming Client Requirements</strong></td>
+<td>Add Artifactory as a network access requirement in place of (or in addition to) <code>hub.docker.com</code>. Update supported repository types to include JFrog Artifactory (Docker Registry API v2).</td>
+</tr>
+<tr>
+<td><strong>Event Streaming Client Deployment</strong></td>
+<td>Add Artifactory configuration step to the 5-step deployment flow (between API access setup and client install). Document the <code>docker_registry</code> configuration parameter and the two images that must be mirrored: <code>netskope/nsstreamingclient:stable</code> and <code>netskope/nswatcher:stable</code>.</td>
+</tr>
+<tr>
+<td><strong>Event Streaming Client Configuration</strong></td>
+<td>Add a section on registry source mode (<code>dockerhub</code> vs. <code>artifactory</code>). Document how to set the Artifactory URL and credentials, plus how to revert to Docker Hub.</td>
+</tr>
+<tr>
+<td><strong>Event Streaming Client — Red Hat / Podman</strong></td>
+<td>Add Podman-specific Artifactory authentication steps (<code>~/.config/containers/containers.conf</code>), noting that rootless Podman has a different credential path than Docker.</td>
+</tr>
+<tr>
+<td><strong>Event Streaming Client Operations and Troubleshooting</strong></td>
+<td>Add a troubleshooting tree for Artifactory connectivity failures (HTTP 401/403/404/timeout). Document the automatic retry mechanism: ESC retries at least once per day without overloading the Artifactory instance. Retry behavior must be visible to the customer for support purposes.</td>
+</tr>
+<tr>
+<td><strong>Event Streaming Client FAQs</strong></td>
+<td>Add FAQ entries: "Can I use Artifactory instead of Docker Hub?", "What images do I need to mirror?", "What happens if Artifactory is temporarily unavailable?"</td>
+</tr>
+<tr>
+<td><strong>Event Streaming Client Architecture</strong></td>
+<td>Note that when Artifactory mode is configured, all Docker/Podman image pulls originate from the customer's Artifactory instance instead of <code>hub.docker.com</code>. The outbound network diagram should be updated to reflect this.</td>
+</tr>
+<tr>
+<td><strong>Event Streaming Client API Access</strong></td>
+<td>No changes required — API access and RBAC are unchanged.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> Retry behavior documentation is <strong>mandatory per BR-017</strong>. The online help must explicitly explain the retry schedule (at least once per day) and the non-overloading behavior, so customers and support engineers understand that transient Artifactory failures do not require manual intervention.</p>
+</blockquote>
+<h3 id="143-support-readiness">14.3 Support Readiness<a class="headerlink" href="#143-support-readiness" title="Permanent link">&para;</a></h3>
+<p>Support and SE teams must be prepared to handle Artifactory-related deployment issues before GA:</p>
+<ul>
+<li><strong>Runbook — Authentication failures (HTTP 401/403):</strong> Verify Artifactory credentials are correctly configured; confirm the token or service account has pull access to the <code>netskope</code> repository path; rerun installer with corrected credentials.</li>
+<li><strong>Runbook — Image not found (HTTP 404):</strong> Confirm both <code>netskope/nsstreamingclient:stable</code> and <code>netskope/nswatcher:stable</code> have been mirrored to the customer's Artifactory instance; check that the configured registry URL path matches the Artifactory repository location.</li>
+<li><strong>Runbook — Connectivity failure (timeout/DNS):</strong> Verify network path from the ESC install host to the Artifactory URL is open; check firewall rules and proxy configuration; ESC will retry automatically (at least once per day) — advise customer to check ESC logs for retry status.</li>
+<li><strong>Runbook — Auto-upgrade failure (watcher container):</strong> Confirm <code>nswatcher:stable</code> is mirrored and accessible at the configured Artifactory URL; confirm watcher container is reading the persisted <code>docker_registry</code> configuration.</li>
+<li><strong>SE training:</strong> SEs should understand that Artifactory support unlocks deployment for air-gapped and security-restricted customers who cannot pull directly from Docker Hub. This is a deployment unlock, not a product capability change — all ESC functionality is identical regardless of registry source.</li>
+</ul>
+<h3 id="144-cogs">14.4 COGS<a class="headerlink" href="#144-cogs" title="Permanent link">&para;</a></h3>
+<p>No material change expected. Artifactory support shifts Docker image pulls to the customer's own infrastructure; Netskope incurs no additional hosting or bandwidth cost.</p>
+<hr />
+<h2 id="15-rollout-usage-projections-npi-phase-design">15. Rollout &amp; Usage Projections [NPI Phase: Design]<a class="headerlink" href="#15-rollout-usage-projections-npi-phase-design" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rollout Area</th>
+<th>Priority</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feature controlled by flag</td>
+<td>P1</td>
+<td>No feature flags expected. The feature is available to all ESC deployments on the versions that ship it. No tenant-level toggle required.</td>
+</tr>
+<tr>
+<td>Feature enabled to all tenants</td>
+<td>P1</td>
+<td>Available to all customers on the qualifying ESC version. No selective enablement or allowlist.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Rollout phases:</strong></li>
+<li><strong>Beta (Q3 2026):</strong> Limited to 2–5 customers with known Artifactory requirements. Anchor Beta customers: SIX Group and US Cellular Corporation (both currently blocked from deploying ESC — see §2.3). Objective is to validate installer configuration flow, Podman/Docker compatibility, and watcher container propagation in real customer environments. Customer feedback collected before GA decision.</li>
+<li><strong>GA (Q4 2026):</strong> General availability to all customers following Beta feedback review and any required fixes. Target installer/container version to be proposed by Engineering — see OI-005.</li>
+<li><strong>Projected volumes:</strong> Feature is expected to be used by a small segment of the ESC customer base (~5%). Adoption is inherently limited to customers who operate an Artifactory pipeline and have a policy prohibiting direct Docker Hub pulls.</li>
+<li><strong>Fair use &amp; ToS:</strong> No ToS implications anticipated.</li>
+</ul>
+<hr />
+<h2 id="16-adoption-metrics-npi-phase-design">16. Adoption Metrics [NPI Phase: Design]<a class="headerlink" href="#16-adoption-metrics-npi-phase-design" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Definition of "adopted":</strong> Customer has configured Artifactory mode and successfully completed at least one install or upgrade using a custom registry URL.</li>
+<li><strong>Adoption forecast:</strong> ~5% of the active ESC customer base. This feature addresses a specific high-security segment — customers who operate a managed Artifactory pipeline and enforce a policy against direct Docker Hub pulls. Broad adoption is not expected or targeted.</li>
+<li><strong>Tracking method:</strong> Internal metrics telemetry (see §12 Monitoring requirements); count of ESC installs reporting <code>artifactory</code> mode active vs. <code>dockerhub</code>.</li>
+<li><strong>Key metrics:</strong> Number of ESC installs/upgrades using Artifactory mode; error rate by error type (HTTP 401/403/404/timeout); retry success rate; time-to-first-successful-pull after configuration.</li>
+</ul>
+<hr />
+<h2 id="17-open-items-decisions-needed-npi-phase-concept">17. Open Items &amp; Decisions Needed [NPI Phase: Concept]<a class="headerlink" href="#17-open-items-decisions-needed-npi-phase-concept" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Options</th>
+<th>Owner</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OI-001: Custom Artifactory integration approach</td>
+<td><strong>Resolved.</strong> Registry URL supports three Artifactory patterns (path, port, subdomain — see §8.2). TLS with custom CA is required; certificate paths differ by runtime and privilege level (see §8.6). Credentials are stored in Docker/Podman native credential store, not in a separate installer config. Engineering must implement runtime detection (Docker vs. Podman rootless) to select correct paths.</td>
+<td>Engineering</td>
+<td>Resolved — see §8.2, §8.3, §8.6</td>
+</tr>
+<tr>
+<td>OI-002: Authentication mechanism</td>
+<td><strong>Resolved.</strong> Installer invokes <code>docker login</code> (Ubuntu/Docker) or <code>podman login</code> (RHEL/Podman) with customer-provided username + API key or identity token. Credentials persist in <code>~/.docker/config.json</code> (Docker) or <code>~/.config/containers/auth.json</code> (rootless Podman). Plain username/password is also accepted but discouraged. See §8.3.</td>
+<td>Engineering</td>
+<td>Resolved — see §8.3</td>
+</tr>
+<tr>
+<td>OI-003: View/edit config mechanism</td>
+<td><strong>Resolved (PM decision).</strong> Config view and edit are exposed as new installer menu options, consistent with the existing <code>update_client_key</code> pattern. Two new options: <code>show_config</code> (read-only display of current mode, URL, masked credentials) and <code>update_registry</code> (edit mode, URL, credentials with live validation). See §9.2 and §9.3.</td>
+<td>Engineering + PM</td>
+<td>Resolved — see §9.2, §9.3</td>
+</tr>
+<tr>
+<td>OI-004: Watcher container Artifactory propagation</td>
+<td>How does the watcher container (<code>nswatcher</code>) receive the Artifactory registry config to use when pulling updated images? Options: A) Config is written to a shared volume the watcher reads; B) Watcher is restarted with new env vars by the installer; C) Other.</td>
+<td>Engineering</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>OI-005: Target installer/container versions</td>
+<td>Target installer version (I.x) and container version (C.x) to be determined by Engineering based on development timeline and release schedule. PM to confirm once Engineering proposes.</td>
+<td>Engineering</td>
+<td>Engineering to propose</td>
+</tr>
+<tr>
+<td>OI-006: Image tag handling</td>
+<td>The current default tag is <code>stable</code>. Must the customer mirror with the same <code>stable</code> tag, or can they use their own tag? A) Always use <code>stable</code> tag appended to the configured registry URL; B) Customer-configurable tag override</td>
+<td>Engineering</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>OI-007: Image signature verification approach (P2)</td>
+<td>Engineering to research viable signing mechanisms for both Docker and Podman runtimes (e.g., cosign/Sigstore, Docker Content Trust). Must produce a ballpark scope estimate before GA. Not required for initial delivery to unblock SIX Group.</td>
+<td>Engineering</td>
+<td>Open (P2)</td>
+</tr>
+<tr>
+<td>OI-008: Retry interval and backoff parameters</td>
+<td>What is the retry schedule for failed image pulls? Minimum: at least once per day. Upper bound: must not overload Artifactory. Engineering to define exact interval, backoff strategy (fixed vs. exponential), and maximum retry window before giving up (if any). Parameters must be documented in online help.</td>
+<td>Engineering</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>OI-009: Management Console alert surfacing mechanism</td>
+<td>How are Artifactory failure alerts collected and surfaced in the Management Console? Short-term: Engineering may use an internal-only data collection path (e.g., internal telemetry pipeline). Target state: customer-visible alerts. Engineering to propose short-term and long-term implementation approach.</td>
+<td>Engineering</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>OI-010: Full custom source — supportability model (P2)</td>
+<td>Engineering to evaluate whether Artifactory mode can be generalized to support other Docker Registry API v2-compatible registries. Must answer: A) Are auth models (OAuth tokens for ECR/ACR, basic auth for Harbor/Nexus, etc.) sufficiently standardized to support generically? B) What does a tested/supported registry list look like? C) What is the support burden per additional registry? Engineering to propose a supportability model before this is committed as a deliverable.</td>
+<td>Engineering</td>
+<td>Open (P2)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="18-document-history">18. Document History<a class="headerlink" href="#18-document-history" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Initial draft from problem statement, scope, and use case inputs</td>
+</tr>
+<tr>
+<td>0.2</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Added SIX Group as customer voice (§2.3); updated OI-001 and OI-002 to reflect Engineering research track for industry-standard Artifactory integration; linked to NPLAN-7304</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Expanded §6 use cases and journeys (installer setup flow, view/edit config, upgrade compatibility); added §8.2–8.7 specs (source mode, auth mandatory, upgrade compat, view/edit commands, RHEL priority); updated §7 happy/sad paths; expanded §9 CLI screens; updated §10 component catalog and §11 business rules; added RHEL-first and secrets constraints to §13.4</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Reviewed full product documentation (10 PDFs from docs.netskope.com). Major corrections: identified two Docker images in scope (nsstreamingclient + nswatcher); corrected installer to Python script interface; updated §9 CLI screens to match real installer menu pattern; updated §13 architecture with Docker/Podman dual-runtime requirement; added watcher container propagation as OI-004; expanded assumptions (A7, A8); updated constraints and dependencies.</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Added P2 image authenticity requirements: §1.3 design principle #5, §6.2 P2 use case, §6.3 priority table row, §7.4 FAQ entry, §10 component catalog row, BR-014 business rule, OI-007 open item for Engineering signature verification research.</td>
+</tr>
+<tr>
+<td>0.6</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Added P1 error handling requirements: structured ESC log messages, Management Console alerts (internal access short-term), automatic retry (≥1/day, no overload, documented in online help), audit log on custom source selection. Updates across §6.2, §6.3, §7.3, §10, §11 (BR-015–018), §12 (Analytics table from reporting spec), §13.3 (audit &amp; online help doc requirement), §17 (OI-008, OI-009).</td>
+</tr>
+<tr>
+<td>0.7</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Added monitoring requirements (§12): internal metrics (ESC using custom source count) and error reporting (internal pipeline for support escalations). Added rollout requirements (§15): no feature flags, available to all tenants on qualifying ESC version. Updated §16 adoption metrics tracking method and key metrics to align with monitoring spec.</td>
+</tr>
+<tr>
+<td>0.8</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Added P2 full custom source requirement: support Docker Registry API v2-compatible registries beyond Artifactory (ECR, ACR, Harbor, Nexus), contingent on Engineering defining a supportability model. Updates: §6.2 P2 use case, §6.3 priority row, §8.1 spec note with supportability constraint, §10 component row, OI-010.</td>
+</tr>
+<tr>
+<td>0.9</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Added UX/UI and API requirements. §9.0: confirmed No UI for this iteration (P1); specified P2 target state MC UI (upgrade history, failure timestamps, Warning status cleared on recovery). §6.3: split MC alerts row into P1 (internal collection) and P2 (customer-visible UI). §10: split MC alerts component accordingly. BR-016: updated to reflect P1/P2 split and P2 Warning state lifecycle. §13.3: clarified no new API; future config API must attach to existing /api/v2/streamingclient/ endpoint.</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Completed §2.2 competitive landscape: researched Zscaler, PANW, Skyhigh, Broadcom, Cisco, Akamai. Key finding: no competitor has a containerized log-forwarding client — Netskope's architecture is unique; this feature closes the Docker registry compliance gap that competitors do not face.</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Completed §14 GTM: added §14.1 Pricing &amp; Packaging (no license change), §14.2 Documentation (8-doc update table with mandatory retry behavior note per BR-017), §14.3 Support Readiness (4-class runbook for 401/403/404/connectivity + SE training), §14.4 COGS (no change).</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Updated §4 Personas: added Customer Admin (Cloud Management Console) and End User personas with explicit interaction descriptions; retained Security/Platform Team and Support/PS. Updated §15 Rollout: Beta Q3 2026 (2–5 customers), GA Q4 2026 post-feedback. Updated §16 Adoption Metrics: ~5% adoption target, rationale (high-security/Artifactory segment), added time-to-first-successful-pull metric.</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Resolved OI-001 and OI-002 via registry research. §8.2: expanded registry URL to cover all three Artifactory URL patterns (path/port/subdomain). §8.3: specified three credential types (password/API key/identity token) and Docker/Podman native credential store as storage mechanism. §8.6: fully specified TLS/custom CA requirements with per-runtime certificate paths (Docker, Podman system, Podman rootless). §8.8 new: alternative registry landscape for P2 scope (Harbor, Quay, Nexus, ECR, ACR) with supportability constraint on short-lived vs. long-lived token models. §7.4 FAQ updated. OI-001 and OI-002 marked Resolved.</td>
+</tr>
+<tr>
+<td>1.4</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Added US Cellular Corporation as second blocked customer in §2.3 Customer Voice. Updated §15 to name SIX Group and US Cellular as anchor Beta customers.</td>
+</tr>
+<tr>
+<td>1.5</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Applied review cleanup: removed internal authoring note from §8.6; updated §10 Custom CA/TLS row to Coming Soon (P1) with §8.6 pointer; replaced stale OI-001 reference in §13.1 with resolved spec pointers (§8.3, §8.6); added A9 TLS/HTTPS assumption to §5; added BR-016 cross-reference to §6.3 P1 alerts row.</td>
+</tr>
+<tr>
+<td>1.6</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Updated Appendix B: replaced TBD with confirmed docs.netskope.com/en/event-streaming-client URL and linked to §14.2 documentation update requirements.</td>
+</tr>
+<tr>
+<td>1.7</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Resolved OI-003 (PM decision): config view/edit exposed as new installer menu options <code>5. show_config</code> and <code>6. update_registry</code>, consistent with existing <code>update_client_key</code> pattern. Updated §9.1 installer menu, §9.2 and §9.3 entry points. OI-003 marked Resolved.</td>
+</tr>
+<tr>
+<td>1.8</td>
+<td>2026-05-12</td>
+<td>btan@netskope.com</td>
+<td>Updated OI-005: target installer/container version is Engineering's decision to propose; PM to confirm. Updated §15 accordingly.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="19-appendices">19. Appendices<a class="headerlink" href="#19-appendices" title="Permanent link">&para;</a></h2>
+<h3 id="appendix-a-demo-reference-values">Appendix A: Demo / Reference Values<a class="headerlink" href="#appendix-a-demo-reference-values" title="Permanent link">&para;</a></h3>
+<p><em>No demo values defined yet.</em></p>
+<h3 id="appendix-b-related-documents">Appendix B: Related Documents<a class="headerlink" href="#appendix-b-related-documents" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Location</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event Streaming Client Documentation</td>
+<td>https://docs.netskope.com/en/event-streaming-client</td>
+<td>Full ESC documentation hub — Requirements, Deployment, Configuration, Red Hat/Podman, Operations/Troubleshooting, FAQs, Architecture, API Access. All pages in this hub require updates for Artifactory support (see §14.2).</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button id="giscus-toggle"
+        type="button"
+        aria-label="Toggle discussion panel"
+        aria-expanded="false"
+        aria-controls="giscus-panel"
+        title="Open discussion for this section">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+  </svg>
+  <span>Discuss</span>
+</button>
+
+<aside id="giscus-panel" aria-hidden="true" aria-label="Section discussion">
+  <header class="giscus-panel__header">
+    <div class="giscus-panel__titlebar">
+      <strong>Discussion</strong>
+      <button id="giscus-close" type="button" aria-label="Close discussion panel">✕</button>
+    </div>
+    <div class="giscus-panel__sectionbar">
+      <label for="giscus-section-picker">Section:</label>
+      <select id="giscus-section-picker" aria-label="Select section to discuss"></select>
+    </div>
+  </header>
+  <div class="giscus-panel__body" id="giscus-container"></div>
+</aside>
+
+<style>
+  :root {
+    --giscus-panel-width: 460px;
+    --giscus-panel-z: 1000;
+    --gh-bg: #ffffff;
+    --gh-bg-subtle: #f6f8fa;
+    --gh-border: #d0d7de;
+    --gh-fg: #1f2328;
+    --gh-fg-muted: #59636e;
+    --gh-accent: #0969da;
+    --gh-accent-fg: #ffffff;
+  }
+  [data-md-color-scheme="slate"] {
+    --gh-bg: #0d1117;
+    --gh-bg-subtle: #161b22;
+    --gh-border: #30363d;
+    --gh-fg: #e6edf3;
+    --gh-fg-muted: #8b949e;
+    --gh-accent: #2f81f7;
+    --gh-accent-fg: #ffffff;
+  }
+  #giscus-toggle {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: var(--giscus-panel-z);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--gh-accent);
+    color: var(--gh-accent-fg);
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    font: 500 14px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  }
+  #giscus-toggle:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  }
+  #giscus-toggle:focus-visible {
+    outline: 2px solid var(--gh-accent);
+    outline-offset: 2px;
+  }
+
+  #giscus-panel {
+    position: fixed;
+    top: 0;
+    right: calc(-1 * var(--giscus-panel-width) - 20px);
+    width: var(--giscus-panel-width);
+    max-width: 100vw;
+    height: 100vh;
+    z-index: var(--giscus-panel-z);
+    background: var(--gh-bg);
+    color: var(--gh-fg);
+    color-scheme: light;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+    visibility: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  [data-md-color-scheme="slate"] #giscus-panel {
+    color-scheme: dark;
+  }
+  #giscus-panel.open {
+    right: 0;
+    visibility: visible;
+  }
+  .giscus-panel__header {
+    flex: 0 0 auto;
+    border-bottom: 1px solid var(--gh-border);
+    background: var(--gh-bg-subtle);
+  }
+  .giscus-panel__titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px 8px;
+    font-size: 15px;
+  }
+  .giscus-panel__titlebar strong {
+    color: var(--gh-fg);
+    font-weight: 600;
+  }
+  .giscus-panel__sectionbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 18px 14px;
+    font-size: 13px;
+    color: var(--gh-fg-muted);
+  }
+  .giscus-panel__sectionbar label {
+    flex: 0 0 auto;
+  }
+  #giscus-section-picker {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 6px 10px;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    background: var(--gh-bg);
+    color: var(--gh-fg);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16' fill='%238b949e'%3E%3Cpath d='M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 28px;
+  }
+  #giscus-section-picker:hover {
+    border-color: var(--gh-fg-muted);
+  }
+  #giscus-section-picker:focus-visible {
+    outline: 2px solid var(--gh-accent);
+    outline-offset: 0;
+    border-color: var(--gh-accent);
+  }
+  #giscus-section-picker option {
+    background: var(--gh-bg);
+    color: var(--gh-fg);
+  }
+  #giscus-close {
+    background: transparent;
+    border: 0;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--gh-fg-muted);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  #giscus-close:hover {
+    background: var(--gh-border);
+    color: var(--gh-fg);
+  }
+  .giscus-panel__body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 16px 18px;
+    background: var(--gh-bg);
+  }
+
+  @media (max-width: 600px) {
+    :root { --giscus-panel-width: 100vw; }
+    #giscus-toggle span { display: none; }
+    #giscus-toggle { padding: 12px; }
+  }
+</style>
+
+<script>
+  (function () {
+    var toggleBtn = document.getElementById('giscus-toggle');
+    var panel = document.getElementById('giscus-panel');
+    var closeBtn = document.getElementById('giscus-close');
+    var picker = document.getElementById('giscus-section-picker');
+    var container = document.getElementById('giscus-container');
+    if (!toggleBtn || !panel || !closeBtn || !picker || !container) return;
+
+    var PAGE_PATH = window.location.pathname;
+    var PAGE_KEY = PAGE_PATH.replace(/\/$/, '') || '/';
+
+    var main = document.querySelector('article') || document.querySelector('main') || document.body;
+    var headings = Array.prototype.slice.call(main.querySelectorAll('h2[id], h3[id]'));
+    var sections = headings.map(function (h) {
+      return {
+        id: h.id,
+        level: parseInt(h.tagName.substring(1), 10),
+        title: h.textContent.replace(/¶|#/g, '').trim(),
+        element: h,
+        term: PAGE_KEY + '#' + h.id
+      };
+    });
+
+    var pageTerm = PAGE_KEY;
+    var pageOption = { id: '', title: '— Whole page —', term: pageTerm, level: 0 };
+
+    function makeOpt(s) {
+      var opt = document.createElement('option');
+      opt.value = s.term;
+      opt.textContent = (s.level === 3 ? '    ' : '') + s.title;
+      opt.dataset.id = s.id;
+      return opt;
+    }
+    picker.appendChild(makeOpt(pageOption));
+    sections.forEach(function (s) { picker.appendChild(makeOpt(s)); });
+
+    var currentTerm = pageTerm;
+    if (sections.length > 0 && 'IntersectionObserver' in window) {
+      var visibleIds = new Set();
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) visibleIds.add(e.target.id);
+          else visibleIds.delete(e.target.id);
+        });
+        for (var i = sections.length - 1; i >= 0; i--) {
+          if (visibleIds.has(sections[i].id)) {
+            currentTerm = sections[i].term;
+            return;
+          }
+        }
+      }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+      sections.forEach(function (s) { io.observe(s.element); });
+    }
+
+    if (window.location.hash) {
+      var hashId = window.location.hash.substring(1);
+      var match = sections.find(function (s) { return s.id === hashId; });
+      if (match) currentTerm = match.term;
+    }
+
+    function giscusTheme() {
+      var scheme = document.documentElement.getAttribute('data-md-color-scheme');
+      return scheme === 'slate' ? 'dark' : 'light';
+    }
+
+    var giscusLoaded = false;
+    function loadGiscus(term) {
+      picker.value = term;
+      container.innerHTML = '';
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      var attrs = {
+        'data-repo': 'ns-btan/team13-pm-prd',
+        'data-repo-id': 'R_kgDOSbzwRA',
+        'data-category': 'General',
+        'data-category-id': 'DIC_kwDOSbzwRM4C86GP',
+        'data-mapping': 'specific',
+        'data-term': term,
+        'data-strict': '0',
+        'data-reactions-enabled': '1',
+        'data-emit-metadata': '0',
+        'data-input-position': 'bottom',
+        'data-theme': giscusTheme(),
+        'data-lang': 'en',
+        'data-loading': 'lazy',
+        'crossorigin': 'anonymous'
+      };
+      Object.keys(attrs).forEach(function (k) { script.setAttribute(k, attrs[k]); });
+      script.async = true;
+      container.appendChild(script);
+      giscusLoaded = true;
+    }
+
+    function switchTerm(term) {
+      var frame = document.querySelector('iframe.giscus-frame');
+      if (frame && frame.contentWindow) {
+        frame.contentWindow.postMessage({
+          giscus: { setConfig: { term: term } }
+        }, 'https://giscus.app');
+        picker.value = term;
+      } else {
+        loadGiscus(term);
+      }
+    }
+
+    function openPanel() {
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      if (!giscusLoaded) loadGiscus(currentTerm);
+      else if (picker.value !== currentTerm) switchTerm(currentTerm);
+    }
+    function closePanel() {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    toggleBtn.addEventListener('click', function () {
+      panel.classList.contains('open') ? closePanel() : openPanel();
+    });
+    closeBtn.addEventListener('click', closePanel);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
+    });
+    picker.addEventListener('change', function () { switchTerm(picker.value); });
+
+    var mo = new MutationObserver(function () {
+      if (!giscusLoaded) return;
+      var frame = document.querySelector('iframe.giscus-frame');
+      if (frame && frame.contentWindow) {
+        frame.contentWindow.postMessage({
+          giscus: { setConfig: { theme: giscusTheme() } }
+        }, 'https://giscus.app');
+      }
+    });
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-md-color-scheme'] });
+  })();
+</script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "toc.integrate", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
