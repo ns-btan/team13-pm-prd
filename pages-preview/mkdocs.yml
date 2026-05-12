@@ -1,4 +1,4 @@
-site_name: PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client
+site_name: Team 13 PRDs
 site_description: Product Requirements catalog for ns-btan/team13-pm-prd
 repo_url: https://github.com/ns-btan/team13-pm-prd
 repo_name: ns-btan/team13-pm-prd
@@ -31,12 +31,9 @@ theme:
 
 nav:
   - Home: index.md
-  # Add per-PRD sections here as you publish them. Example:
-  # - NPLAN-XXXX <Title>:
-  #   - Overview: nplan-xxxx/index.md
-  #   - PRD: nplan-xxxx/prd.md
-  #   - UI Design Spec: nplan-xxxx/ui-spec.md
-  #   - Interactive Mockup: nplan-xxxx/mockup/index.html
+  - NPLAN-7304 Event Streaming Client — Artifactory Support:
+    - Overview: nplan-7304/index.md
+    - PRD: nplan-7304/prd.md
   - Process & Schema: process.md
 
 markdown_extensions:
