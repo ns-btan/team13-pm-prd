@@ -1,0 +1,66 @@
+site_name: PRD Team 13 - NPLAN-7304 - Artifactory support for Event Streaming Client
+site_description: Product Requirements catalog for ns-btan/team13-pm-prd
+repo_url: https://github.com/ns-btan/team13-pm-prd
+repo_name: ns-btan/team13-pm-prd
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+    - content.code.copy
+    - search.highlight
+
+nav:
+  - Home: index.md
+  # Add per-PRD sections here as you publish them. Example:
+  # - NPLAN-XXXX <Title>:
+  #   - Overview: nplan-xxxx/index.md
+  #   - PRD: nplan-xxxx/prd.md
+  #   - UI Design Spec: nplan-xxxx/ui-spec.md
+  #   - Interactive Mockup: nplan-xxxx/mockup/index.html
+  - Process & Schema: process.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  generator: false
+
+extra_css:
+  - _stylesheets/status-badges.css
+
+plugins:
+  - search
+  - macros:
+      module_name: macros
+      on_error_fail: true
